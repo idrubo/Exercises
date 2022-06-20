@@ -11,18 +11,63 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<style>
-      header {
+
+      body {
 
       }
+
+      #header {
+				margin: 5px;
+				background-color: black;
+      }
+
+			#title {
+				margin: 5px;
+				display: flex;
+				flex-direction: row;
+			}
+
+			#tLeft {
+				margin: 5px;
+				width: 5%;
+				background-color: gray;
+			}
+
+			#tCenter {
+				margin: 5px;
+				width: 75%;
+				background-color: green;
+			}
+
+			#tRight {
+				margin: 5px;
+				width: 5%;
+				background-color: blue;
+			}
+
+			#Brief {
+				margin: 5px;
+				background-color: orange;
+			}
+
 		</style>    
 
 	</head>
 
 	<body>
 
-		<header></header>
-		<article></article>
-		<footer></footer>
+		<header id="header">
+			<div id="title">
+				<div id="tLeft">Left</div>
+				<div id="tCenter">Title</div>
+				<div id="tRight">Rigth</div>
+			</div>
+			<div id="Brief">Brief intro</div>
+		</header>
+
+		<article>Article</article>
+
+		<footer>Footer</footer>
 
 	</body>
 </html>
