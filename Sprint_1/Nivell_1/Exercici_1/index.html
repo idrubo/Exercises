@@ -14,7 +14,7 @@ body {
 
 }
 
-	#header {
+	header {
 		margin: 10px;
 		background-color: black;
 
@@ -26,35 +26,39 @@ body {
 		width: calc(100% - 40px);
 		margin: 20px 20px 0px 20px;
 
-		font-size: 30px;
 		background-color: DarkSlateBlue;
 
 		display: flex;
 		flex-direction: row;
 	}
 
+	.title {
+		margin: 7px;
+		padding: 4px;
+
+		font-size: 30px;
+		background-color: IndianRed;
+	}
+
 	#tLeft {
-		margin: 5px;
+		min-width: 3em;
 		width: 10%;
 
 		text-align: left;
-		background-color: IndianRed;
 	}
 
 	#tCenter {
-		margin: 5px;
+		min-width: 4em;
 		width: 80%;
 
 		text-align: center;
-		background-color: IndianRed;
 	}
 
 	#tRight {
-		margin: 5px;
+		min-width: 3em;
 		width: 10%;
 
 		text-align: right;
-		background-color: IndianRed;
 	}
 
 	#BriefBox {
@@ -62,7 +66,7 @@ body {
 		width: calc(100% - 40px);
 		margin: 10px 20px 20px 20px;
 
-		font-size: 20px;
+		font-size: 15px;
 		background-color: orange;
 
 		display: flex;
@@ -70,22 +74,24 @@ body {
 
 	#Brief {
 		width: 100%;
-		margin: 5px;
+		margin: 7px;
+		padding: 4px;
+
 		background-color: Khaki;
 	}
 
-	#article {
+	article {
 		margin: 10px;
 		background-color: black;
 
-		font-size: 30px;
+		font-size: 15px;
 
 		display: flex;
 		flex-direction: row;
 	}
 
 	#aMainBox {
-		width: calc(50% - 40px);
+		width: calc(50% - 20px);
 		margin: 20px 0px 20px 20px;
 
 		background-color: Gray;
@@ -95,16 +101,77 @@ body {
 		flex-wrap: wrap;
 	}
 
-	.aMainText {
-		width: calc(50% - 40px);
+	.aMain {
+		width: calc(50% - 24px);
+		padding: 2px;
+
+		background-color: CornFlowerBlue;
 	}
 
+	#aText1 {
+		margin: 10px 10px 0px 10px;
+	}
 
-	#aSide {
+	#aText2 {
+		width: calc(50% - 14px);
+		margin: 10px 10px 0px 0px;
+	}
+
+	#aText3 {
+		margin: 10px 10px 0px 10px;
+	}
+
+	#aText4 {
+		width: calc(50% - 14px);
+		margin: 10px 10px 0px 0px;
+	}
+
+	#aFooter {
+		width: calc(100% - 24px);
+		margin: 10px 0px 10px 10px;
+		padding: 2px;
+
+		background-color: DeepSkyBlue;
+	}
+
+	#aSideBox {
 		width: calc(50% - 40px);
 		margin: 20px;
+		padding: 2px;
 
 		background-color: Coral;
+	}
+
+	.aSide {
+		width: calc(100% - 20px);
+		padding: 2px;
+
+		background-color: Khaki;
+	}
+
+	#sText1 {
+		margin: 10px 10px 0px 10px;
+	}
+
+	#sText2 {
+		margin: 10px 10px 10px 10px;
+	}
+
+	footer {
+		margin: 10px;
+
+		font-size: 15px;
+		background-color: black;
+
+		display: flex;
+	}
+
+	#fText {
+		width: calc(100% - 40px);
+		margin: 20px;
+		padding: 2px;
+
+		background-color: khaki;
 	}
 
 		</style>    
@@ -112,31 +179,40 @@ body {
 	</head>
 
 	<body>
-		<header id="header">
+		<header>
+
 			<div id="titleBox">
-				<div id="tLeft">Left</div>
-				<div id="tCenter"><b>Title</b></div>
-				<div id="tRight">Rigth</div>
+				<div id="tLeft" class="title">Left</div>
+				<div id="tCenter" class="title"><b>Very Loooong Title</b></div>
+				<div id="tRight" class="title">Rigth</div>
 			</div>
+
 			<div id="BriefBox">
 				<div id="Brief">Brief intro</div>
 			</div>
+
 		</header>
 
-		<article id="article">
+		<article>
+
 			<div id="aMainBox">
-				<div class=".aMainText">Text Box 1</div>
-				<div class=".aMainText">Text Box 2</div>
-				<div class=".aMainText">Text Box 3</div>
-				<div class=".aMainText">Text Box 4</div>
-				<div class=".aMainText">Text Box 5</div>
+				<div id="aText1" class="aMain">Article text 1</div>
+				<div id="aText2" class="aMain">Article text 2</div>
+				<div id="aText3" class="aMain">Article text 3</div>
+				<div id="aText4" class="aMain">Article text 4</div>
+				<div id="aFooter">Article footer 1</div>
 			</div>
-			<div id="aSide">Side article</div>
+
+			<div id="aSideBox">
+				<div id="sText1" class="aSide">Side text 1</div>
+				<div id="sText2" class="aSide">Side text 2</div>
+			</div>
+
 		</article>
 
-		<!--
-			<footer>Footer</footer>
-		-->
+		<footer>
+			<div id="fText">Footer</div>
+		</footer>
 
 	</body>
 </html>
