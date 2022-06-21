@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Exercici 1</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+
+body {
+	max-width: 1200px;
+	margin: auto;
+
+}
+
+	#header {
+		margin: 10px;
+		background-color: black;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	#titleBox {
+		width: calc(100% - 40px);
+		margin: 20px 20px 0px 20px;
+
+		font-size: 30px;
+		background-color: DarkSlateBlue;
+
+		display: flex;
+		flex-direction: row;
+	}
+
+	#tLeft {
+		margin: 5px;
+		width: 10%;
+
+		text-align: left;
+		background-color: IndianRed;
+	}
+
+	#tCenter {
+		margin: 5px;
+		width: 80%;
+
+		text-align: center;
+		background-color: IndianRed;
+	}
+
+	#tRight {
+		margin: 5px;
+		width: 10%;
+
+		text-align: right;
+		background-color: IndianRed;
+	}
+
+	#BriefBox {
+
+		width: calc(100% - 40px);
+		margin: 10px 20px 20px 20px;
+
+		font-size: 20px;
+		background-color: orange;
+
+		display: flex;
+	}
+
+	#Brief {
+		width: 100%;
+		margin: 5px;
+		background-color: Khaki;
+	}
+
+	#article {
+		margin: 10px;
+		background-color: black;
+
+		font-size: 30px;
+
+		display: flex;
+		flex-direction: row;
+	}
+
+	#aMainBox {
+		width: calc(50% - 40px);
+		margin: 20px 0px 20px 20px;
+
+		background-color: Gray;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.aMainText {
+		width: calc(50% - 40px);
+	}
+
+
+	#aSide {
+		width: calc(50% - 40px);
+		margin: 20px;
+
+		background-color: Coral;
+	}
+
+		</style>    
+
+	</head>
+
+	<body>
+		<header id="header">
+			<div id="titleBox">
+				<div id="tLeft">Left</div>
+				<div id="tCenter"><b>Title</b></div>
+				<div id="tRight">Rigth</div>
+			</div>
+			<div id="BriefBox">
+				<div id="Brief">Brief intro</div>
+			</div>
+		</header>
+
+		<article id="article">
+			<div id="aMainBox">
+				<div class=".aMainText">Text Box 1</div>
+				<div class=".aMainText">Text Box 2</div>
+				<div class=".aMainText">Text Box 3</div>
+				<div class=".aMainText">Text Box 4</div>
+				<div class=".aMainText">Text Box 5</div>
+			</div>
+			<div id="aSide">Side article</div>
+		</article>
+
+		<!--
+			<footer>Footer</footer>
+		-->
+
+	</body>
+</html>
+
