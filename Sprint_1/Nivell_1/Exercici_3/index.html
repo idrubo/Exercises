@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Exercici 1</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+
+body {
+	max-width: 1200px;
+	margin: auto;
+
+}
+
+	header {
+		margin: 10px;
+		background-color: black;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	#titleBox {
+		width: calc(100% - 40px);
+		margin: 20px 20px 0px 20px;
+
+		background-color: DarkSlateBlue;
+
+		display: flex;
+		flex-direction: row;
+	}
+
+	.title {
+		margin: 7px;
+		padding: 4px;
+
+		font-size: 30px;
+		background-color: IndianRed;
+	}
+
+	#tLeft {
+		min-width: 3em;
+		width: 10%;
+
+		text-align: left;
+	}
+
+	#tCenter {
+		min-width: 4em;
+		width: 80%;
+
+		text-align: center;
+	}
+
+	#tRight {
+		min-width: 3em;
+		width: 10%;
+
+		text-align: right;
+	}
+
+	#BriefBox {
+		width: calc(100% - 40px);
+		margin: 10px 20px 20px 20px;
+
+		font-size: 15px;
+		background-color: orange;
+
+		display: flex;
+	}
+
+	#Brief {
+		width: 100%;
+		margin: 7px;
+		padding: 4px;
+
+		background-color: Khaki;
+	}
+
+	article {
+		margin: 10px;
+		background-color: black;
+
+		font-size: 15px;
+
+		display: flex;
+		flex-direction: row;
+	}
+
+	#aMainBox {
+		width: calc(50% - 20px);
+		margin: 20px 0px 20px 20px;
+
+		background-color: Gray;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.aMain {
+		width: calc(50% - 24px);
+		padding: 2px;
+
+		background-color: CornFlowerBlue;
+	}
+
+	#aText1 {
+		margin: 10px 10px 0px 10px;
+	}
+
+	#aText2 {
+		width: calc(50% - 14px);
+		margin: 10px 10px 0px 0px;
+	}
+
+	#aText3 {
+		margin: 10px 10px 0px 10px;
+	}
+
+	#aText4 {
+		width: calc(50% - 14px);
+		margin: 10px 10px 0px 0px;
+	}
+
+	#aFooter {
+		width: calc(100% - 24px);
+		margin: 10px 0px 10px 10px;
+		padding: 2px;
+
+		background-color: DeepSkyBlue;
+	}
+
+	#aSideBox {
+		width: calc(50% - 40px);
+		margin: 20px;
+		padding: 2px;
+
+		background-color: Coral;
+	}
+
+	.aSide {
+		width: calc(100% - 20px);
+		padding: 2px;
+
+		background-color: Khaki;
+	}
+
+	#sText1 {
+		margin: 10px 10px 0px 10px;
+	}
+
+	#sText2 {
+		margin: 10px 10px 10px 10px;
+	}
+
+	footer {
+		margin: 10px;
+
+		font-size: 15px;
+		background-color: black;
+
+		display: flex;
+	}
+
+	#fText {
+		width: calc(100% - 40px);
+		margin: 20px;
+		padding: 2px;
+
+		background-color: khaki;
+	}
+
+	@media only screen and (max-width: 768px) {
+
+		article {
+			background-color: yellow;
+
+			display: flex;
+			flex-direction: column;
+		}
+
+		#aMainBox {
+			width: calc(100% - 20px - 20px);
+			margin: 20px 0px 20px 20px;
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.aMain {
+			width: calc(50% - 24px);
+		}
+
+		#aText1 {
+			margin: 10px 10px 0px 10px;
+		}
+
+		#aText2 {
+			width: calc(50% - 14px);
+			margin: 10px 10px 0px 0px;
+		}
+
+		#aText3 {
+			margin: 10px 10px 0px 10px;
+		}
+
+		#aText4 {
+			width: calc(50% - 14px);
+			margin: 10px 10px 0px 0px;
+		}
+
+		#aFooter {
+			width: calc(100% - 24px);
+			margin: 10px 0px 10px 10px;
+		}
+
+		#aSideBox {
+			width: calc(100% - 40px);
+		}
+
+		.aSide {
+			width: calc(100% - 20px);
+		}
+
+		#sText1 {
+			margin: 10px 10px 0px 10px;
+		}
+
+		#sText2 {
+			margin: 10px 10px 10px 10px;
+		}
+
+	}
+
+	@media only screen and (max-width: 600px) {
+
+		article {
+			background-color: yellow;
+
+			display: flex;
+			flex-direction: column;
+		}
+
+		#aMainBox {
+			width: calc(100% - 20px - 20px);
+			margin: 20px 0px 20px 20px;
+
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
+
+		.aMain {
+			width: calc(100% - 24px);
+		}
+
+		#aText1 {
+			margin: 10px 10px 0px 10px;
+		}
+
+		#aText2 {
+			width: calc(100% - 24px);
+			margin: 10px 10px 0px 10px;
+		}
+
+		#aText3 {
+			margin: 10px 10px 0px 10px;
+		}
+
+		#aText4 {
+			width: calc(100% - 24px);
+			margin: 10px 10px 0px 10px;
+		}
+
+		#aFooter {
+			width: calc(100% - 24px);
+			margin: 10px 0px 10px 10px;
+		}
+
+		#aSideBox {
+			width: calc(100% - 40px);
+		}
+
+		.aSide {
+			width: calc(100% - 20px);
+		}
+
+		#sText1 {
+			margin: 10px 10px 0px 10px;
+		}
+
+		#sText2 {
+			margin: 10px 10px 10px 10px;
+		}
+
+	}
+
+		</style>    
+
+	</head>
+
+	<body>
+		<header>
+
+			<div id="titleBox">
+				<div id="tLeft" class="title">Left</div>
+				<div id="tCenter" class="title"><b>Very Loooong Title</b></div>
+				<div id="tRight" class="title">Rigth</div>
+			</div>
+
+			<div id="BriefBox">
+				<div id="Brief">Brief intro</div>
+			</div>
+
+		</header>
+
+		<article>
+
+			<div id="aMainBox">
+				<div id="aText1" class="aMain">Article text 1</div>
+				<div id="aText2" class="aMain">Article text 2</div>
+				<div id="aText3" class="aMain">Article text 3</div>
+				<div id="aText4" class="aMain">Article text 4</div>
+				<div id="aFooter">Article footer 1</div>
+			</div>
+
+			<div id="aSideBox">
+				<div id="sText1" class="aSide">Side text 1</div>
+				<div id="sText2" class="aSide">Side text 2</div>
+			</div>
+
+		</article>
+
+		<footer>
+			<div id="fText">Footer</div>
+		</footer>
+
+	</body>
+</html>
+
