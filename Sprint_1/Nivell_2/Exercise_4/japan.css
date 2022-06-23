@@ -11,12 +11,19 @@ header {
 nav {
 	display: flex;
 	flex-direction row;
-	background-color: gray;
 }
 
 #Icon {
 	margin: 4px;
 }
+
+#fIcon {
+	margin: 4px;
+	transition-property: background-color;
+	transition-duration: 1s;
+}
+
+#fIcon:hover   { background-color: DarkSalmon; }
 
 #Menu {
 	display: flex;
@@ -28,11 +35,41 @@ nav {
 	flex-grow: 1;
 }
 
+a.mLink {
+	transition-property: background-color;
+	transition-duration: 1s;
+}
+
+a.mLink:visited { text-decoration: none; }
+a.mLink:link    { text-decoration: none; }
+a.mLink:hover   { background-color: DarkSalmon; }
+
 #Social {
 	margin: 4px;
+	transition-property: background-color;
+	transition-duration: 1s;
 }
 
 #hPicture {
-	max-width: 100%;
+	background-color: gray;
+	height: 150px;
+
+	display: flex;
+	justify-content: space-around;
+}
+
+#hImg {
+	z-index: 0;
+}
+
+#OIText {
+	background-color: DarkSalmon;
+
+
+	flex-basis: 70%;
+	align-self: flex-end;
+
+	display: flex;
+	justify-content: center;
 }
 
