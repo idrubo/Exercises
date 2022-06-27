@@ -19,12 +19,8 @@ article {
 .aSection {
 	margin: 10px;
 	background-color: WhiteSmoke;
-	flex: 1 0 35%;
-}
 
-.aBody {
-	margin: 10px;
-	background-color: WhiteSmoke;
+	flex: 1 0 35%;
 
 	display: flex;
 	flex-direction: column;
@@ -71,6 +67,7 @@ p.aMText {
 .aTColumn {
 	padding: 4px;
 	min-width: 100px;
+
 	flex-basis: 45%;
 }
 
@@ -109,6 +106,7 @@ a.aLink:link    { text-decoration: none; }
 
 aside {
 	margin: 0px 0px 10px 0px;
+
 	flex: 1 0 25%;
 }
 

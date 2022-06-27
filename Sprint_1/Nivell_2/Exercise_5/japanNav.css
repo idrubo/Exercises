@@ -26,6 +26,7 @@ nav {
 	height:42px;
 	padding: 8px;
 	border-radius: 25%;
+
 	transition-property: background-color;
 	transition-duration: 1s;
 }
