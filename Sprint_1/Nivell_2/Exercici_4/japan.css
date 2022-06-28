@@ -15,7 +15,7 @@ nav {
 #Icon {
 	flex-grow: 1;
 
-	display:flex;
+	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 }
@@ -25,6 +25,7 @@ nav {
 	height:42px;
 	padding: 8px;
 	border-radius: 25%;
+
 	transition-property: background-color;
 	transition-duration: 1s;
 }
@@ -54,9 +55,8 @@ nav {
 
 	flex-grow: 1 0 18%;
 
-	display:flex;
-	justify-content: center;
-	align-items: center;
+	display: flex;
+	align-items: center; 
 }
 
 .mItems:hover { background-color: DarkSalmon; }
@@ -83,10 +83,11 @@ a.mLink:link    { text-decoration: none; }
 }
 
 img.sIcon {
-	border-radius: 25%;
 	width: 24px;
 	height: 24px;
+
 	padding: 8px;
+	border-radius: 25%;
 
 	transition-property: background-color;
 	transition-duration: 1s;
