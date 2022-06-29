@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Tema 3 Exercici 1</title>
+		<title>Topic 3 Exercise 1</title>
 		<meta charset="UTF-8">
 	</head>
 
@@ -12,7 +12,7 @@
 <?php 
 $intVar  = 10;
 $dblVar  = 1.1;
-$strVar  = "String var.";
+$strVar  = "Something.";
 $boolVar = true;
 
 echo "With var_dump:"; echo "<br>";
@@ -25,7 +25,7 @@ var_dump ($intVar, $dblVar, $strVar, $boolVar);
 echo "With echoes:"; echo "<br>";
 echo "intVar  = " . $intVar; echo "<br>";
 echo "dblVar  = " . $dblVar; echo "<br>";
-echo "strVar  = " . $dblVar; echo "<br>";
+echo "strVar  = " . $strVar; echo "<br>";
 echo "boolVar = " . $boolVar; echo "<br>";
 ?>
 

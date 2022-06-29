@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Tema 3 Exercici 2</title>
+		<title>Topic 3 Exercise 2</title>
 		<meta charset="UTF-8">
 	</head>
 

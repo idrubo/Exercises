@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Tema m Exercici n</title>
+		<title>Tocpi 3 Level 2 Exercise 1</title>
 		<meta charset="UTF-8">
 	</head>
 
@@ -18,17 +18,17 @@ function add ($X, $Y)
 	return $X + $Y;
 }
 
-$a = 1;
-$b = 2;
-
+$a = 1; $b = 2;
 echo "Entrada: " . $a . ", " . $b; echo "<br>";
-echo "Salida: " . $Y = add (1, 2); echo "<br><br>";
+echo "Salida: " . $Y = add ($a, $b); echo "<br><br>";
 
+$a = 3; $b = 2;
 echo "Entrada: " . $a . ", " . $b; echo "<br>";
-echo "Salida: " . $Y = add (3, 2); echo "<br><br>";
+echo "Salida: " . $Y = add ($a, $b); echo "<br><br>";
 
+$a = 2; $b = 2;
 echo "Entrada: " . $a . ", " . $b; echo "<br>";
-echo "Salida: " . $Y = add (2, 2); echo "<br><br>";
+echo "Salida: " . $Y = add ($a, $b); echo "<br><br>";
 
 ?>
 

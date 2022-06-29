@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Tema m Exercici n</title>
+		<title>Topic 3 Exercise 5</title>
 		<meta charset="UTF-8">
 	</head>
 
@@ -18,13 +18,13 @@ array_push ($arrB, 24);
 
 $arrM = array_merge ($arrA, $arrB);
 
-echo "Longitut de l'array combinat: ";
+echo "Merged array length: ";
 echo count ($arrM); echo "<br><br>";
 
-echo "Amb  var_dump ():"; echo "<br>";
+echo "With var_dump ():"; echo "<br>";
 var_dump ($arrM); echo "<br><br>";
 
-echo "Amb  print_r ():"; echo "<br>";
+echo "With print_r ():"; echo "<br>";
 print_r ($arrM); echo "<br>";
 
 ?>

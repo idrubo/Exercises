@@ -3,19 +3,19 @@
 <html>
 
 	<head>
-		<title>Tema 3 Exercici 1</title>
+		<title>Topic 3 Exercise 3</title>
 		<meta charset="UTF-8">
 	</head>
 
 	<body>
 
 <?php 
-$strVar  = "Lluís";
+define ("strCosnt", "Lluís");
 
 echo "format: h1."; echo "<br>";
 
 echo "<h1>";
-echo $strVar;
+echo strCosnt;
 echo "</h1>"
 
 ?>
