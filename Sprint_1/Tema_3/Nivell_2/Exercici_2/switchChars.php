@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Exercise 1 Level-2 Topic-3</title>
+		<title>Topic-3 Level-2 Exercise-2</title>
 		<meta charset="UTF-8">
 	</head>
 
