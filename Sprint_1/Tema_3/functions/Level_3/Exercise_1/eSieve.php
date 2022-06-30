@@ -14,14 +14,14 @@
 
 function fillArr (&$prime, $n)
 {
-	for ($i = 1; $i <= $n; $i++) array_push ($prime, 1);
+	for ($i = 0; $i <= $n; $i++) array_push ($prime, 1);
 
 	return $prime;
 }
 
 function eSieve ($n)
 {
-	$prime = array (1);
+	$prime = array ();
 	$prime = fillArr ($prime, $n);
 
 	for ($p = 2; $p * $p <= $n; $p++)
