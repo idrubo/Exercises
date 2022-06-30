@@ -19,7 +19,7 @@ function isEven ($a)
 		echo "Your age is an <b>even</b> number.";
 }
 
-$age = 34;
+$age = 35;
 
 echo "Your age is " . $age; echo "<br><br>";
 

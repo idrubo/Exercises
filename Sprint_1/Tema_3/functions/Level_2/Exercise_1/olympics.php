@@ -13,7 +13,6 @@
 
 function olympics ()
 {
-	echo "Olympic years: ";
 	for ($i = 1960; $i <= 2016; $i += 4)
 	{
 		if ($i != 2016) echo $i . ", ";
@@ -21,6 +20,7 @@ function olympics ()
 	}
 }
 
+echo "Olympic years: ";
 olympics ();
 
 ?>

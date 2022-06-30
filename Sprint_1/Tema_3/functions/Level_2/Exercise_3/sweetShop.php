@@ -26,6 +26,11 @@ function sweet ($s)
 	return $s * 1.5;
 }
 
+function total ($buy)
+{
+	return chocolate ($buy ["chc"]) + bubbleGum ($buy ["bg"]) + sweet ($buy ["swt"]);
+}
+
 $buy = array ("chc" => 2, "bg" => 1, "swt" => 1);
 
 echo "I bougth "
@@ -33,9 +38,9 @@ echo "I bougth "
 	. $buy ["bg"] . " bubble gum and "
  	. $buy ["swt"] . " sweet<br><br>";
 
-$pay = chocolate ($buy ["chc"]) + bubbleGum ($buy ["bg"]) + sweet ($buy ["swt"]);
+$pay = total ($buy);
 
-echo "Total: " . $pay;
+echo "Total to pay: " . $pay;
 
 ?>
 

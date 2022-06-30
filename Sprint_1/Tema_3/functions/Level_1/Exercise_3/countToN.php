@@ -13,14 +13,15 @@
 function countToN ($n)
 {
 
-	for ($i = 2; $i <= $n; $i += 2)
+	for ($i = 0; $i <= $n; $i += 2)
 	{
 		echo "Count is: " . $i; echo "<br>";
 	}
 
 }
 
-countToN (25);
+$n = 25;
+countToN ($n);
 
 ?>
 

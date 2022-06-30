@@ -13,7 +13,7 @@
 function countToN ($n = 10)
 {
 
-	for ($i = 2; $i <= $n; $i += 2)
+	for ($i = 0; $i <= $n; $i += 2)
 	{
 		echo "Count is: " . $i; echo "<br>";
 	}
@@ -21,10 +21,11 @@ function countToN ($n = 10)
 }
 
 echo "Counting to the default value:"; echo "<br>";
-countToN ();
-echo "<br>";
 
-echo "Counting to other value:"; echo "<br>";
+countToN ();
+
+echo "<br>Counting to other value:"; echo "<br>";
+
 countToN (14);
 
 ?>

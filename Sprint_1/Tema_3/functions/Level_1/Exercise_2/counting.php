@@ -13,7 +13,7 @@
 
 function countToTen ()
 {
-	for ($i = 2; $i <= 10; $i += 2)
+	for ($i = 0; $i <= 10; $i += 2)
 	{
 		echo "Count is: " . $i; echo "<br>";
 	}

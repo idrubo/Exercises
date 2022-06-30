@@ -18,7 +18,6 @@ function bill ($mins)
 	$mins -= 3;
 	$steps = 1 + $mins;
 
-
 	return 10 + $steps * 5;
 }
 
