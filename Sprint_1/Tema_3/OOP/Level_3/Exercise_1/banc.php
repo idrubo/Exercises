@@ -5,6 +5,25 @@
 	<head>
 		<title>Topic 3 Level 3 Exercise 1</title>
 		<meta charset="UTF-8">
+
+<style>
+#newAcc
+{
+visibility: hidden;
+}
+
+#accDeposit
+{
+visibility: hidden;
+}
+
+#accWithdraw
+{
+visibility: hidden;
+}
+
+</style>
+
 	</head>
 
 	<body>
@@ -77,13 +96,38 @@ class account
 
 $name = $acctN = $qtty = "";
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	$acctN = testAcctN  ($_POST["acctN"]);
-	$name  = testName   ($_POST["name"]);
-	$qtty  = testAmount ($_POST["amount"]);
+	switch ($_POST["op"])
+	{
+	case "new":
+		echo "New Account<br>";
+		echo "<style>#newAcc{visibility:visible;}</style>";
 
-	$ac = new account ($acctN, $name, $qtty);
+		//		$acctN = testAcctN  ($_POST["acctN"]);
+		//		$name  = testName   ($_POST["name"]);
+		//		$qtty  = testAmount ($_POST["amount"]);
+
+		//		$ac = new account ($acctN, $name, $qtty);
+		break;
+
+	case "deposit":
+		echo "Deposit<br>";
+		echo "<style>#accDeposit{visibility:visible;}</style>";
+		//		$qtty  = testAmount ($_POST["amount"]);
+
+		//		$ac->deposit ($qtty);
+		break;
+
+	case "withdraw":
+		echo "Withdraw<br>";
+		echo "<style>#accWithdraw{visibility:visible;}</style>";
+		//		$qtty  = testAmount ($_POST["amount"]);
+
+		//		$ac->withdraw ($qtty);
+		break;
+	}
 }
 
 function testName ($name)
@@ -110,7 +154,7 @@ function testAmount ($amount)
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
-  <input type="radio" name="op" value="new">
+  <input type="radio" name="op" value="new" checked>
   <label for="new">New account</label><br>
 
   <input type="radio" name="op" value="deposit">
@@ -119,15 +163,30 @@ function testAmount ($amount)
   <input type="radio" name="op" value="withdraw">
   <label for="withdraw">Withdraw</label>
 
+  <input type="submit">
 </form>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
+<div id="newAcc">
 <h4>New account:</h4>
 Name: <input type="text" name="name"><br>
 Account Number: <input type="text" name="acctN"><br>
 Initial deposit:  <input type="number" name="amount"><br>
 <input type="submit">
+</div>
+
+<div id="accDeposit">
+<h4>Deposit:</h4>
+Amount:  <input type="number" name="amount"><br>
+<input type="submit">
+</div>
+
+<div id="accWithdraw">
+<h4>Withdraw:</h4>
+Amount:  <input type="number" name="amount"><br>
+<input type="submit">
+</div>
 
 </form>
 
