@@ -30,7 +30,7 @@
 				<div class="formBox">
 					<h4>Deposit:</h4>
 
-					<div class="formRows">Amount:<input type="number" name="dmnt"></div>
+					<div class="formRows">Amount:<input type="text" name="dmnt"></div>
 
 					<div><input type="submit" name="sent" value="deposit"></div>
 				</div>
@@ -38,7 +38,7 @@
 				<div class="formBox">
 					<h4>Withdraw:</h4>
 
-					<div class="formRows">Amount:</td><td><input type="number" name="wmnt"></div>
+					<div class="formRows">Amount:<input type="text" name="wmnt"></div>
 
 					<div><input type="submit" name="sent" value="withdraw"></div>
 				</div>
@@ -47,16 +47,30 @@
 		</main>
 
 		<footer>
-			<div id="fRow">
+			<div id="fAccount">
+				<b>Account: <br></b>
+
+				<?php
+				if (isset ($ac))
+				{
+					echo "<h4 style=\"color:Navy;\">";
+					echo "Name: "         . $ac->getName ()       . "<br>";
+					echo "Acct. number: " . $ac->getAcctNumber () . "<br>";
+					echo "Balance: "      . $ac->getBalance ()    . "<br></h4>";
+				}
+				?>
+
+			</div>
+			<div id="fState">
 				<b>State:<br></b>
 
-				<?php if (isset ($ac)) echo $ac->getStatus (); ?>
+				<?php
+				if (isset ($ac)) echo $ac->getStatus ();
+				else echo $Status;
+				?>
 
 			</div>
 		</footer>
-
-
 	</body>
-
 </html>
 
