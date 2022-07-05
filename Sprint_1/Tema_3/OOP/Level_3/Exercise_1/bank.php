@@ -1,76 +1,52 @@
-<!DOCTYPE html>
-
-<html>
-
-	<head>
-		<title>Topic 3 Level 3 Exercise 1</title>
-		<meta charset="UTF-8">
-
-<style>
-
-#newAcc
-{
-visibility: hidden;
-}
-
-#accDeposit
-{
-visibility: hidden;
-}
-
-#accWithdraw
-{
-visibility: hidden;
-}
-
-</style>
-
-	</head>
-
-	<body>
-
 <?php
 
 class account
 {
 	private $acctNumber;
-	private $Name;
+	private $hName;
 	private $balance;
+
+	private $state;
 
 	public function __construct ($aN, $Nm, $bal = 0)
 	{
 		$this->acctNumber = $aN;
-		$this->Name = $Nm;
+		$this->hName = $Nm;
 		$this->balance= $bal;
 
-		echo "A new account is set with: <br><br>";
-		echo "Account number: " . $this->acctNumber . "<br>";
-		echo "name: "           . $this->Name       . "<br>";
-		echo "balance: "        . $this->balance    . "<br>";
+		$this->state = "<h4 style=\"color:Navy;\">";
+		$this->state = $this->state . "A new account is set with: <br>";
+		$this->state = $this->state . "Account number: " . $this->acctNumber . "<br>";
+		$this->state = $this->state . "name: "           . $this->hName      . "<br>";
+		$this->state = $this->state . "balance: "        . $this->balance    . "</h4>";
 	}
 
 	function deposit ($amount)
 	{
 		$this->balance += $amount;
-		echo "<h4>Deposit completed. ";
-		echo "Your balance is now " . $this->balance. ".</h4>";
+		$this->state = "<h4 style=\"color:Navy;\">";
+		$this->state = $this->state . "Deposit completed. ";
+		$this->state = $this->state . "Your balance is now " . $this->balance. ".</h4>";
 	}
 
 	function withdraw ($amount)
 	{
 		if ($amount > $this->balance)
 		{
-			echo "<h4 style=\"color:red;\">Your balance (" . $this->balance . ") is too low for this operation.</h4>";
+			$this->state = "<h4 style=\"color:red;\">";
+			$this->state = $this->state . "Your balance (" . $this->balance;
+			$this->state = $this->state . ") is too low for this operation.</h4>";
 			return;
 		}
 		$this->balance -= $amount;
-		echo "<h4>Withdraw completed. ";
-		echo "Your balance is now " . $this->balance. ".</h4>";
+		$this->state = "<h4 style=\"color:Navy;\">";
+		$this->state = $this->state . "Withdraw completed. ";
+		$this->state = $this->state . "Your balance is now " . $this->balance. ".</h4>";
 	}
 
 	public function setName ($Nm)
 	{
-		$this->Name = $Nm;
+		$this->hName = $Nm;
 	}
 
 	public function setAcctNumber ($aN)
@@ -80,7 +56,7 @@ class account
 
 	public function getName ()
 	{
-		return $this->Name;
+		return $this->hName;
 	}
 
 	public function getAcctNumber ()
@@ -93,42 +69,11 @@ class account
 		return $this->balance;
 	}
 
-}
-
-$name = $acctN = $qtty = "";
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-	switch ($_POST["op"])
+	public function getStatus ()
 	{
-	case "new":
-		echo "New Account<br>";
-		echo "<style>#newAcc{visibility:visible;}</style>";
-
-		//		$acctN = testAcctN  ($_POST["acctN"]);
-		//		$name  = testName   ($_POST["name"]);
-		//		$qtty  = testAmount ($_POST["amount"]);
-
-		//		$ac = new account ($acctN, $name, $qtty);
-		break;
-
-	case "deposit":
-		echo "Deposit<br>";
-		echo "<style>#accDeposit{visibility:visible;}</style>";
-		//		$qtty  = testAmount ($_POST["amount"]);
-
-		//		$ac->deposit ($qtty);
-		break;
-
-	case "withdraw":
-		echo "Withdraw<br>";
-		echo "<style>#accWithdraw{visibility:visible;}</style>";
-		//		$qtty  = testAmount ($_POST["amount"]);
-
-		//		$ac->withdraw ($qtty);
-		break;
+		return $this->state;
 	}
+
 }
 
 function testName ($name)
@@ -148,50 +93,58 @@ function testAcctN ($acctN)
 
 function testAmount ($amount)
 {
-	if (is_numeric ($amount)) return $amount;
+	if (is_numeric ($amount)) return (int) $amount;
+
+	echo "NOT a correct amount<br>";
+
+	return -1;
 }
 
-?>
+session_start ();
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+$name = $acctN = "";
+$qtty = 0;
 
-	<input type="radio" name="op" value="new" checked>
-	<label for="new">New account</label><br>
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+	switch ($_POST["sent"])
+	{
+	case "create":
+		$acctN = testAcctN  ($_POST["acctN"]);
+		$name  = testName   ($_POST["name"]);
+		$qtty  = testAmount ($_POST["mnt"]);
 
-	<input type="radio" name="op" value="deposit">
-	<label for="deposit">Deposit</label><br>
+		if ($qtty >= 0)
+		{
+			$ac = new account ($acctN, $name, $qtty);
+			$_SESSION["ac"] = $ac;
+		}
 
-	<input type="radio" name="op" value="withdraw">
-	<label for="withdraw">Withdraw</label>
+		/* Include a setMessage here ! */
 
-	<input type="submit">
-</form>
+		break;
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+	case "deposit":
+		$qtty  = testAmount ($_POST["dmnt"]);
 
-<div id="newAcc">
-<h4>New account:</h4>
-Name: <input type="text" name="name"><br>
-Account Number: <input type="text" name="acctN"><br>
-Initial deposit:  <input type="number" name="amount"><br>
-<input type="submit">
-</div>
+		$ac = $_SESSION["ac"];
 
-<div id="accDeposit">
-<h4>Deposit:</h4>
-Amount:  <input type="number" name="amount"><br>
-<input type="submit">
-</div>
+		if ($qtty >= 0) $ac->deposit ($qtty);
 
-<div id="accWithdraw">
-<h4>Withdraw:</h4>
-Amount:  <input type="number" name="amount"><br>
-<input type="submit">
-</div>
+		/* Include a setMessage here ! */
 
-</form>
+		break;
 
-	</body>
+	case "withdraw":
+		$qtty  = testAmount ($_POST["wmnt"]);
 
-</html>
+		$ac = $_SESSION["ac"];
+
+		if ($qtty >= 0) $ac->withdraw ($qtty);
+
+		/* Include a setMessage here ! */
+
+		break;
+	}
+}
 
