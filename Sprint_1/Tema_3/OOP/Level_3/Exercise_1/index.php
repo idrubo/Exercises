@@ -95,9 +95,6 @@ function testAmount ($amount)
 	if (is_numeric ($amount)) return (int) $amount;
 
 	echo "NOT a correct amount<br>";
-	echo "<style>#newAcc{visibility:visible;}</style>";
-	echo "<style>#accDeposit{visibility:hidden;}</style>";
-	echo "<style>#accWithdraw{visibility:hidden;}</style>";
 
 	return -1;
 }
@@ -108,62 +105,40 @@ $name = $acctN = $qtty = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-	if (array_key_exists ("op", $_POST))
+	switch ($_POST["sent"])
 	{
-		switch ($_POST["op"])
+	case "create":
+		$acctN = testAcctN  ($_POST["acctN"]);
+		$name  = testName   ($_POST["name"]);
+		$qtty  = testAmount ($_POST["mnt"]);
+
+		if ($qtty >= 0)
 		{
-		case "new":
-			echo "New Account<br>";
-			echo "<style>#newAcc{visibility:visible;}</style>";
-			break;
-
-		case "deposit":
-			echo "Deposit<br>";
-			echo "<style>#accDeposit{visibility:visible;}</style>";
-			break;
-
-		case "withdraw":
-			echo "Withdraw<br>";
-			echo "<style>#accWithdraw{visibility:visible;}</style>";
-			break;
+			$ac = new account ($acctN, $name, $qtty);
+			$_SESSION["ac"] = $ac;
 		}
-	}
 
-	if (array_key_exists ("sent", $_POST))
-	{
-		switch ($_POST["sent"])
-		{
-		case "create":
-			$acctN = testAcctN  ($_POST["acctN"]);
-			$name  = testName   ($_POST["name"]);
-			$qtty  = testAmount ($_POST["mnt"]);
+		break;
 
-			if ($qtty >= 0)
-			{
-				$ac = new account ($acctN, $name, $qtty);
-				$_SESSION["ac"] = $ac;
-			}
+	case "deposit":
+		$qtty  = testAmount ($_POST["dmnt"]);
 
-			break;
+		$ac = $_SESSION["ac"];
 
-		case "deposit":
-			$qtty  = testAmount ($_POST["dmnt"]);
-
-			$ac = $_SESSION["ac"];
-
+		if ($qtty >= 0)
 			$ac->deposit ($qtty);
 
-			break;
+		break;
 
-		case "withdraw":
-			$qtty  = testAmount ($_POST["wmnt"]);
+	case "withdraw":
+		$qtty  = testAmount ($_POST["wmnt"]);
 
-			$ac = $_SESSION["ac"];
+		$ac = $_SESSION["ac"];
 
+		if ($qtty >= 0)
 			$ac->withdraw ($qtty);
 
-			break;
-		}
+		break;
 	}
 }
 
@@ -174,44 +149,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 </header>
 
 <main>
-<div id="opers">
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-<div id=radiOps>
-			<input type="radio" name="op" value="new" checked>
-			<label for="new">New account</label><br>
-
-			<input type="radio" name="op" value="deposit">
-			<label for="deposit">Deposit</label><br>
-
-			<input type="radio" name="op" value="withdraw">
-			<label for="withdraw">Withdraw</label>
-</div>
-<div id="submitOps">
-			<input type="submit" value="Choose">
-</div>
-		</form>
-</div>
-
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
 			<div id="newAcc">
 				<h4>New account:</h4>
-				Name: <input type="text" name="name"><br>
-				Account Number: <input type="text" name="acctN"><br>
-				Initial deposit:  <input type="text" name="mnt"><br>
-				<input type="submit" name="sent" value="create">
+
+				<div class="formRows">Name:<input type="text" name="name"></div>
+				<div class="formRows">Account Number:<input type="text" name="acctN"></div>
+				<div class="formRows">Initial deposit:<input type="text" name="mnt"></div>
+
+				<div><input type="submit" name="sent" value="create"></div>
 			</div>
 
 			<div id="accDeposit">
 				<h4>Deposit:</h4>
-				Amount:  <input type="number" name="dmnt"><br>
-				<input type="submit" name="sent" value="deposit">
+
+				<div class="formRows">Amount:<input type="number" name="dmnt"></div>
+
+				<div><input type="submit" name="sent" value="deposit"></div>
 			</div>
 
 			<div id="accWithdraw">
 				<h4>Withdraw:</h4>
-				Amount:  <input type="number" name="wmnt"><br>
-				<input type="submit" name="sent" value="withdraw">
+
+				<div class="formRows">Amount:</td><td><input type="number" name="wmnt"></div>
+
+				<div><input type="submit" name="sent" value="withdraw"></div>
 			</div>
 
 		</form>

@@ -1,48 +1,65 @@
 body
 {
-	margin: auto;
+	margin: 10px;
+	max-width: 600px;
+
+	display:flex;
+	flex-direction: column;
+	align-content: center;
 }
 
 header
 {
 	margin: 10px;
+	padding: 10px;
 	background-color: LightBlue;
+	color: Navy;
 }
 
 main
 {
 	margin: 10px;
 	background-color: LightBlue;
+
+  	display: flex;
+  	flex-direction: column;
+}
+
+h4
+{
+	padding: 2px;
+}
+
+input
+{
+	margin: 5px;
+	padding: 3px;
+}
+
+.formRows
+{
 	display: flex;
-	flex-direction: column;
-}
-
-#radiOps
-{
-	margin: 10px;
-	padding: 10px;
-	background-color: PapayaWhip;
-}
-
-#submitOps
-{
-	margin: 0px 10px 10px;
-	padding: 10px;
-	background-color: PapayaWhip;
+	justify-content: space-between;
 }
 
 #newAcc
 {
-visibility: hidden;
+	background-color: PeachPuff;
+	margin: 10px;
+	padding: 10px;
 }
 
 #accDeposit
 {
-visibility: hidden;
+	background-color: PeachPuff;
+	margin: 10px;
+	padding: 10px;
 }
 
 #accWithdraw
 {
-visibility: hidden;
+	background-color: PeachPuff;
+	margin: 10px;
+	padding: 10px;
 }
 
