@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 
 <style>
+
 #newAcc
 {
 visibility: hidden;
@@ -154,16 +155,16 @@ function testAmount ($amount)
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 
-  <input type="radio" name="op" value="new" checked>
-  <label for="new">New account</label><br>
+	<input type="radio" name="op" value="new" checked>
+	<label for="new">New account</label><br>
 
-  <input type="radio" name="op" value="deposit">
-  <label for="deposit">Deposit</label><br>
+	<input type="radio" name="op" value="deposit">
+	<label for="deposit">Deposit</label><br>
 
-  <input type="radio" name="op" value="withdraw">
-  <label for="withdraw">Withdraw</label>
+	<input type="radio" name="op" value="withdraw">
+	<label for="withdraw">Withdraw</label>
 
-  <input type="submit">
+	<input type="submit">
 </form>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
