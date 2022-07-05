@@ -1,3 +1,36 @@
+body
+{
+	margin: auto;
+}
+
+header
+{
+	margin: 10px;
+	background-color: LightBlue;
+}
+
+main
+{
+	margin: 10px;
+	background-color: LightBlue;
+	display: flex;
+	flex-direction: column;
+}
+
+#radiOps
+{
+	margin: 10px;
+	padding: 10px;
+	background-color: PapayaWhip;
+}
+
+#submitOps
+{
+	margin: 0px 10px 10px;
+	padding: 10px;
+	background-color: PapayaWhip;
+}
+
 #newAcc
 {
 visibility: hidden;
