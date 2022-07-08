@@ -1,3 +1,5 @@
+/* tienda */
+
 -- 1
 SELECT * FROM producto;
 
@@ -85,4 +87,38 @@ SELECT producto.nombre, producto.precio FROM producto JOIN fabricante ON product
 SELECT producto.nombre, producto.precio FROM producto JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Seagate';
 
 -- 30
+SELECT producto.nombre, producto.precio FROM producto JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE RIGHT(fabricante.nombre, 1)='e';
+
+-- 31
+SELECT producto.nombre, producto.precio FROM producto JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE LOCATE ('w', fabricante.nombre)<>0;
+
+-- 32
+SELECT producto.nombre, producto.precio, fabricante.nombre FROM producto JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE producto.precio>180 ORDER BY producto.precio DESC, producto.nombre;
+
+-- 33
+SELECT DISTINCT fabricante.nombre FROM producto JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo;
+
+-- 34
+SELECT DISTINCT fabricante.nombre, producto.nombre FROM producto RIGHT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo;
+
+-- 35
+SELECT DISTINCT fabricante.nombre FROM producto RIGHT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE producto.nombre IS NULL;
+
+-- 36
+SELECT DISTINCT fabricante.nombre, producto.nombre FROM producto LEFT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Lenovo';
+
+-- 37
+SELECT nombre, codigo, precio, codigo_fabricante FROM producto WHERE precio=(SELECT producto.precio FROM producto LEFT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Lenovo' ORDER BY producto.precio DESC LIMIT 1);
+
+-- 38
+SELECT producto.nombre FROM producto LEFT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Lenovo' ORDER BY producto.precio DESC LIMIT 1;
+
+-- 39
+SELECT producto.nombre FROM producto LEFT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Hewlett-Packard' ORDER BY producto.precio ASC LIMIT 1;
+
+-- 40
+SELECT nombre, codigo, precio, codigo_fabricante FROM producto WHERE precio>=(SELECT producto.precio FROM producto LEFT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Lenovo' ORDER BY producto.precio DESC LIMIT 1);
+
+-- 41
+SELECT DISTINCT fabricante.nombre, producto.nombre FROM producto LEFT JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Asus' AND producto.precio>(SELECT ROUND(AVG(producto.precio), 2) FROM producto JOIN fabricante ON producto.codigo_fabricante=fabricante.codigo WHERE fabricante.nombre='Asus');
 
