@@ -1,5 +1,14 @@
 /* tienda */
 
+/* DEBUG */
+/* DEBUG */
+/* DEBUG */
+
+/* Las ordenaciones tendrán el orden inverso ??? */
+
+/* DEBUG */
+/* DEBUG */
+/* DEBUG */
 -- 1
 SELECT * FROM producto;
 
