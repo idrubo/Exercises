@@ -10,6 +10,15 @@
 /* DEBUG */
 /* DEBUG */
 
+/*
+* Usual commands:
+*
+* SHOW TABLES;
+* SHOW COLUMNS FROM asignatura;
+* SELECT * FROM persona;
+* SELECT id, nombre, creditos AS cr, tipo, cuatrimestre AS cuat, id_profesor, id_grado FROM asignatura;
+*/
+
 -- 1.1
 SELECT apellido1, apellido2, nombre FROM persona WHERE tipo='alumno' ORDER BY apellido1, apellido2, nombre;
 
@@ -91,4 +100,14 @@ SELECT grado.nombre, asignatura.tipo, SUM(asignatura.creditos) AS creditos FROM 
 
 -- 3.8
 
+
+-- 3.9
+SELECT profesor.id_profesor, persona.nombre, persona.apellido1, persona.apellido2, IF(asignatura.id IS NULL, 0, COUNT(asignatura.id)) AS asignaturas FROM asignatura RIGHT JOIN profesor ON asignatura.id_profesor = profesor.id_profesor JOIN persona ON profesor.id_profesor=persona.id GROUP BY profesor.id_profesor ORDER BY asignaturas DESC;
+
+-- 3.10
+SELECT * FROM persona WHERE tipo='alumno' ORDER BY fecha_nacimiento ASC LIMIT 1;
+
+-- 3.11
+/* Selects the teacher id along with his department. */
+SELECT nombre, apellido1, apellido2, departamento FROM (SELECT profesor.id_profesor, persona.nombre, persona.apellido1, persona.apellido2, departamento.nombre AS departamento, asignatura.id FROM profesor JOIN departamento ON profesor.id_departamento = departamento.id LEFT JOIN asignatura ON profesor.id_profesor=asignatura.id_profesor JOIN persona ON profesor.id_profesor=persona.id WHERE asignatura.id IS NULL) AS subq;
 
