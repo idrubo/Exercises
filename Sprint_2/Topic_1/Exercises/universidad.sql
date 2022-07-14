@@ -1,41 +1,39 @@
 /* univesidad */
 
-/* DEBUG */
-/* DEBUG */
-/* DEBUG */
+USE universidad;
 
-/* Las ordenaciones tendrán el orden inverso ??? */
-
-/* DEBUG */
-/* DEBUG */
-/* DEBUG */
-
-/*
-* Usual commands:
-*
-* SHOW TABLES;
-* SHOW COLUMNS FROM asignatura;
-* SELECT * FROM persona;
-* SELECT id, nombre, creditos AS cr, tipo, cuatrimestre AS cuat, id_profesor, id_grado FROM asignatura;
-*/
+/* Convenient one:
+ *
+ * SELECT id, nombre, creditos AS 'CR', tipo, curso, cuatrimestre AS 'quat', id_profesor, id_grado FROM asignatura;
+ *
+ */
 
 -- 1.1
-SELECT apellido1, apellido2, nombre FROM persona WHERE tipo='alumno' ORDER BY apellido1, apellido2, nombre;
+SELECT apellido1, apellido2, nombre FROM persona
+  WHERE tipo = 'alumno'
+ 	ORDER BY apellido1, apellido2, nombre;
 
 -- 1.2
-SELECT nombre, apellido1, apellido2 FROM persona WHERE tipo='alumno' AND telefono IS NULL;
+SELECT nombre, apellido1, apellido2 FROM persona
+  WHERE tipo = 'alumno' AND telefono IS NULL;
 
 -- 1.3
-SELECT nombre, apellido1, apellido2 FROM persona WHERE tipo='alumno' AND YEAR(fecha_nacimiento)=1999;
+SELECT nombre, apellido1, apellido2 FROM persona
+  WHERE tipo = 'alumno' AND YEAR (fecha_nacimiento) = 1999;
 
 -- 1.4
-SELECT nombre, apellido1, apellido2 FROM persona WHERE tipo='profesor' AND telefono IS NULL AND RIGHT(nif, 1)='K';
+SELECT nombre, apellido1, apellido2 FROM persona
+  WHERE tipo = 'profesor' AND telefono IS NULL AND RIGHT (nif, 1) = 'K';
 
 -- 1.5
-SELECT nombre FROM asignatura WHERE id_grado=7 AND curso=3 AND cuatrimestre=1;
+SELECT nombre FROM asignatura WHERE id_grado = 7 AND curso = 3 AND cuatrimestre = 1;
 
 -- 1.6
-SELECT persona.apellido1, persona.apellido2, persona.nombre, departamento.nombre FROM persona JOIN profesor ON persona.id=profesor.id_profesor JOIN departamento ON profesor.id_departamento=departamento.id ORDER BY persona.apellido1 ASC, persona.nombre ASC;
+SELECT persona.apellido1, persona.apellido2, persona.nombre, departamento.nombre
+  FROM persona
+ 	JOIN profesor ON persona.id = profesor.id_profesor
+ 	JOIN departamento ON profesor.id_departamento = departamento.id
+ 	ORDER BY persona.apellido1 ASC, persona.nombre ASC;
 
 -- 1.7
 SELECT persona.apellido1, persona.apellido2, persona.nombre, asignatura.nombre, curso_escolar.anyo_inicio, curso_escolar.anyo_fin FROM persona JOIN alumno_se_matricula_asignatura ON persona.id=alumno_se_matricula_asignatura.id_alumno JOIN asignatura ON alumno_se_matricula_asignatura.id_asignatura=asignatura.id JOIN curso_escolar ON alumno_se_matricula_asignatura.id_curso_escolar=curso_escolar.id WHERE nif='26902806M';
