@@ -1,21 +1,25 @@
+-- Sprint 2 Topic 1 Level 1 Exercise 1
+--
+-- Optician workshop.
+--
 
-DROP DATABASE IF EXISTS optician;
-CREATE DATABASE optician CHARACTER SET utf8mb4;
-USE optician;
+DROP DATABASE IF EXISTS opticians;
+CREATE DATABASE opticians CHARACTER SET utf8mb4;
+USE opticians;
 
 CREATE TABLE provider (
   idpr    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  name    VARCHAR(100) NOT NULL,
-	street  VARCHAR(100) NOT NULL,
+  name    VARCHAR (100) NOT NULL,
+	street  VARCHAR (100) NOT NULL,
 	nbr     INT UNSIGNED NOT NULL,
 	flr     INT UNSIGNED,
 	door    INT UNSIGNED,
-	city    VARCHAR(50)  NOT NULL,
-	zipCode VARCHAR(5)   NOT NULL,
-	country VARCHAR(50)  NOT NULL,
-	phone   VARCHAR(9)   NOT NULL,
-	fax     VARCHAR(9)   NOT NULL,
-	NIF     VARCHAR(9)   NOT NULL,
+	city    VARCHAR (50)  NOT NULL,
+	zipCode VARCHAR (5)   NOT NULL,
+	country VARCHAR (50)  NOT NULL,
+	phone   VARCHAR (9)   NOT NULL,
+	fax     VARCHAR (9)   NOT NULL,
+	NIF     VARCHAR (9)   NOT NULL,
 	UNIQUE(NIF)
 );
 
@@ -38,9 +42,9 @@ CREATE TABLE glasses (
 	lPower   FLOAT        NOT NULL,
 	rPower   FLOAT        NOT NULL,
 	mounting ENUM('float', 'polymer', 'metallic') NOT NULL,
-	mColor   VARCHAR(25)  NOT NULL,
-	rColor   VARCHAR(25)  NOT NULL,
-	lcolor   VARCHAR(25)  NOT NULL,
+	mColor   VARCHAR (25)  NOT NULL,
+	rColor   VARCHAR (25)  NOT NULL,
+	lcolor   VARCHAR (25)  NOT NULL,
 	pricing  FLOAT        NOT NULL,
 
 	CONSTRAINT idgl_idbr FOREIGN KEY (idglbr)
@@ -56,10 +60,10 @@ CREATE TABLE employee (
 
 CREATE TABLE customer (
   idcu    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  name    VARCHAR(100) NOT NULL,
-	address VARCHAR(150) NOT NULL,
-	phone   VARCHAR(9)   NOT NULL,
-	email   VARCHAR(50)  NOT NULL,
+  name    VARCHAR (100) NOT NULL,
+	address VARCHAR (150) NOT NULL,
+	phone   VARCHAR (9)   NOT NULL,
+	email   VARCHAR (50)  NOT NULL,
 	rDate   DATE         NOT NULL,
 	referer INT UNSIGNED,
 
