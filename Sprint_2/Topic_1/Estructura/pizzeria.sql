@@ -1,4 +1,4 @@
--- Sprint 2 Topic 1 Level 1 Exercise 2
+-- Sprint 2 Topic 1 (estructure) Level 1 Exercise 2
 --
 -- Pizza Restaurant.
 --

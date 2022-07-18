@@ -1,4 +1,4 @@
--- Sprint 2 Topic 1 Level 1 Exercise 1
+-- Sprint 2 Topic 1 (Estructure) Level 1 Exercise 1
 --
 -- Optician workshop.
 --
