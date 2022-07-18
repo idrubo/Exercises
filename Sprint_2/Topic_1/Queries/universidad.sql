@@ -150,7 +150,9 @@ SELECT grado.nombre, asignatura.tipo, SUM(asignatura.creditos) AS creditos
   GROUP BY asignatura.tipo, grado.id;
 
 -- 3.8
-
+SELECT YEAR(anyo_inicio) AS anyo, COUNT(id_alumno) AS alumnos FROM alumno_se_matricula_asignatura
+  JOIN curso_escolar ON alumno_se_matricula_asignatura.id_curso_escolar=curso_escolar.id
+  GROUP BY id_curso_escolar;
 
 -- 3.9
 SELECT profesor.id_profesor, persona.nombre, persona.apellido1, persona.apellido2, IF(asignatura.id IS NULL, 0, COUNT(asignatura.id)) AS asignaturas
