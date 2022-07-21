@@ -192,7 +192,7 @@ CREATE TABLE orderP (
   ON UPDATE CASCADE
 );
 
--- INSERT INTO department VALUES (1, 'Barcelona');
+INSERT INTO department VALUES (1, 'Barcelona');
 INSERT INTO department VALUES (2, 'La coruña');
 INSERT INTO department VALUES (3, 'Valencia');
 INSERT INTO department VALUES (4, 'Toledo');
@@ -239,32 +239,93 @@ INSERT INTO hamburguer VALUES (2, 'Double', NULL, NULL, 3.25);
 INSERT INTO hamburguer VALUES (3, 'Max', NULL, NULL, 4.50);
 
 
---                             pur purcus puremp purres          purDT              delDT             deliver   total
--- INSERT INTO purchase VALUES (1,   1,     2,     1,   '2022-02-01 16:06:00', '2022-02-01 16:26:00', 'atHome', 10.60);
---                           orh orhpur orhham n
--- INSERT INTO orderH VALUES (1,    1,     2,  1);
---                           ord ordpur orddri n
--- INSERT INTO orderD VALUES (2,    1,       ,  );
---                           orp orppur orppiz n
--- INSERT INTO orderP VALUES (3,    ,       ,  );
+--                          pur purcus puremp purres          purDT              delDT             deliver   total
+INSERT INTO purchase VALUES (1,   1,     2,     1,   '2022-02-01 16:06:00', '2022-02-01 16:26:00', 'atHome', 10.60);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (1,    1,     2,  1);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (1,    1,     1,  2);
 
--- INSERT INTO purchase VALUES (2, 2, 3, 3, NULL, 2, 4, '2022-03-10 09:10:00', '2022-03-10 09:23:00', 'atHome', 1, 1, 0, 12.30);
+--                          pur purcus puremp purres          purDT              delDT             deliver   total
+INSERT INTO purchase VALUES (2,   2,     4,     2,   '2022-03-10 09:10:00', '2022-03-10 09:23:00', 'atHome', 12.30);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (2,    2,     3, 2);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (1,    2,     1, 2);
 
--- INSERT INTO purchase VALUES (3, 3, 1, 1, NULL, 1, NULL, '2022-03-10 09:10:00', NULL, 'onRest', 2, 2, 0, 25.30);
--- INSERT INTO purchase VALUES (4, 4, NULL, 2, 1, 1, NULL, '2022-03-10 09:10:00', NULL, 'onRest', 0, 1, 1, 10.20);
+--                          pur purcus puremp purres          purDT              delDT             deliver   total
+INSERT INTO purchase VALUES (3,    3,   NULL,   1,   '2022-03-10 09:10:00',      NULL,             'onRest', 25.30);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (2,   3,     1,   1);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (3,   3,     1,   1);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (2,   3,     2,   1);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (4,   3,     1,   1);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (3,   3,     3,   1);
 
--- INSERT INTO purchase VALUES (5, 1, 1, 3, NULL, 1, 2, '2022-04-11 10:10:00', '2022-04-11 10:15:00', 'atHome', 1, 1, 0,  9.75);
--- INSERT INTO purchase VALUES (6, 1, 1, 1, NULL, 1, 2, '2022-05-12 11:20:00', '2022-05-12 11:30:00', 'atHome', 1, 1, 0, 10.20);
+--                          pur purcus puremp purres          purDT              delDT             deliver   total
+INSERT INTO purchase VALUES (4,    4,   NULL,   2,   '2022-03-10 09:10:00',      NULL,             'onRest', 10.20);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (3,    4,     1,  2);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (5,    4,     3, 1);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (6,    4,     3, 1);
 
--- INSERT INTO purchase VALUES (7, 4, NULL, 3, 2, 2, 4, '2022-06-22 16:50:00', '2022-06-22 17:01:00', 'atHome', 0, 1, 1,  9.75);
--- INSERT INTO purchase VALUES (8, 4, NULL, 2, 1, 2, 4, '2022-07-23 17:20:00', '2022-07-23 17:28:00', 'atHome', 0, 1, 1, 10.20);
+--                          pur purcus puremp purres         purDT                delDT             deliver   total
+INSERT INTO purchase VALUES (5,    1,    4,     2,   '2022-04-11 10:10:00', '2022-04-11 10:15:00', 'atHome',  30.75);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (4,    5,     2,  1);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (5,    5,     3,  2);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (7,    5,     3,  4);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (4,    5,     1,  2);
+
+--                          pur purcus puremp purres         purDT                delDT             deliver   total
+INSERT INTO purchase VALUES (6,   2,     2,      1,  '2022-05-12 11:20:00', '2022-05-12 11:30:00', 'atHome',  10.20);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (6,    6,     1,  1);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (8,    6,     1,  2);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (5,    6,     1,  1);
+
+--                          pur purcus puremp purres         purDT                delDT             deliver   total
+INSERT INTO purchase VALUES (7,   4,     2,     1,   '2022-06-22 16:50:00', '2022-06-22 17:01:00', 'atHome',  2.75);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (6,    7,     1,  1);
+
+--                          pur purcus puremp purres         purDT                delDT             deliver   total
+INSERT INTO purchase VALUES (8,   4,     4,     2,   '2022-07-23 17:20:00', '2022-07-23 17:28:00', 'atHome',  45.20);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (7,    8,     2,  2);
+--                        orh orhpur orhham n
+INSERT INTO orderH VALUES (8,    8,     1,  2);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (9,    8,     1,  2);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (10,   8,     2,  2);
+--                        ord ordpur orddri n
+INSERT INTO orderD VALUES (11,   8,     3,  1);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (7,    8,     1,  1);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (8,    8,     2,  1);
+--                        orp orppur orppiz n
+INSERT INTO orderP VALUES (9,    8,     3,  2);
 
 -- /* Llista quants productes de categoria 'Begudes' s'han venut en una determinada localitat. */
--- SELECT COUNT(purchase.idpurdri) AS drinks FROM purchase
---   JOIN restaurant ON purchase.idpurres = restaurant.idres
---  	JOIN locality ON restaurant.idresloc = locality.idloc
---  	WHERE locality.name = 'Barcelona';
--- 
+SELECT SUM(orderD.n) AS drinks FROM orderD
+  JOIN purchase ON orderD.idordpur = purchase.idpur
+  JOIN restaurant ON purchase.idpurres = restaurant.idres
+  JOIN locality ON restaurant.idresloc = locality.idloc
+  WHERE locality.name = 'Barcelona';
+ 
 -- /* Llista quantes comandes ha efectuat un determinat empleat/da. */
 -- SELECT COUNT(purchase.idpuremp) AS employees FROM purchase
 --   JOIN employee ON purchase.idpuremp = employee.idemp
