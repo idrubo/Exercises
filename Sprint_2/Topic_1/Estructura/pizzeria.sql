@@ -319,15 +319,15 @@ INSERT INTO orderP VALUES (8,    8,     2,  1);
 --                        orp orppur orppiz n
 INSERT INTO orderP VALUES (9,    8,     3,  2);
 
--- /* Llista quants productes de categoria 'Begudes' s'han venut en una determinada localitat. */
+/* Llista quants productes de categoria 'Begudes' s'han venut en una determinada localitat. */
 SELECT SUM(orderD.n) AS drinks FROM orderD
   JOIN purchase ON orderD.idordpur = purchase.idpur
   JOIN restaurant ON purchase.idpurres = restaurant.idres
   JOIN locality ON restaurant.idresloc = locality.idloc
   WHERE locality.name = 'Barcelona';
  
--- /* Llista quantes comandes ha efectuat un determinat empleat/da. */
--- SELECT COUNT(purchase.idpuremp) AS employees FROM purchase
---   JOIN employee ON purchase.idpuremp = employee.idemp
---  	WHERE employee.fName = 'Ana' AND employee.lName = 'Miró' AND employee.mName = 'Adrian';
+/* Llista quantes comandes ha efectuat un determinat empleat/da. */
+SELECT COUNT(purchase.idpuremp) AS employees FROM purchase
+  JOIN employee ON purchase.idpuremp = employee.idemp
+  WHERE employee.fName = 'Ana' AND employee.lName = 'Miró' AND employee.mName = 'Adrian';
 
