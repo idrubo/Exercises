@@ -8,8 +8,8 @@ CREATE DATABASE opticians CHARACTER SET utf8mb4;
 USE opticians;
 
 CREATE TABLE provider (
-  idpr    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  name    VARCHAR (100) NOT NULL,
+	idpr    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name    VARCHAR (100) NOT NULL,
 	street  VARCHAR (100) NOT NULL,
 	nbr     INT UNSIGNED NOT NULL,
 	flr     INT UNSIGNED,
@@ -24,21 +24,21 @@ CREATE TABLE provider (
 );
 
 CREATE TABLE brand (
-  idbr   INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	idbr   INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	idbrpr INT UNSIGNED NOT NULL,
 	name   VARCHAR(50),
 
-  CONSTRAINT idbr_idpr FOREIGN KEY (idbrpr)
-  REFERENCES provider (idpr)
-  ON DELETE RESTRICT
-  ON UPDATE CASCADE,
+	CONSTRAINT idbr_idpr FOREIGN KEY (idbrpr)
+	REFERENCES provider (idpr)
+	ON DELETE RESTRICT
+	ON UPDATE CASCADE,
 
-  CONSTRAINT idbr_idbrpr_uniq UNIQUE (idbr, idbrpr)
+	CONSTRAINT idbr_idbrpr_uniq UNIQUE (idbr, idbrpr)
 );
 
 CREATE TABLE glasses (
 	idgl     INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  idglbr   INT UNSIGNED NOT NULL,
+	idglbr   INT UNSIGNED NOT NULL,
 	lPower   FLOAT        NOT NULL,
 	rPower   FLOAT        NOT NULL,
 	mounting ENUM('float', 'polymer', 'metallic') NOT NULL,
@@ -59,8 +59,8 @@ CREATE TABLE employee (
 );
 
 CREATE TABLE customer (
-  idcu    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  name    VARCHAR (100) NOT NULL,
+	idcu    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name    VARCHAR (100) NOT NULL,
 	address VARCHAR (150) NOT NULL,
 	phone   VARCHAR (9)   NOT NULL,
 	email   VARCHAR (50)  NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE buy (
 INSERT INTO provider VALUES(1, 'Perfect Glasses', 'First St.', 100, 10, NULL, 'London', '01231', 'UK', '32555666', '32555667', '11222222F');
 INSERT INTO provider VALUES(2, 'Shiny Eye Works', 'Second Av.', 23, NULL, NULL, 'New York', '11555', 'US', '32555666', '32555667', '99222242R');
 INSERT INTO provider VALUES(3, 'Healthy Eye', 'Fifth Av.', 500, NULL, NULL, 'New York', '11555', 'US', '32999111', '32999112', '98444686Q');
- 
+
 INSERT INTO brand VALUES(1, 1, 'SunJoy');
 INSERT INTO brand VALUES(2, 1, 'SunBeauty');
 INSERT INTO brand VALUES(3, 2, 'EyeCorrect');
@@ -126,34 +126,34 @@ INSERT INTO buy VALUES(5, 1, 1, 1, '2021-11-1');
 
 /* Llista el total de factures d'un client/a en un període determinat. */
 SELECT buy.idbu, customer.name, brand.name, glasses.pricing, buy.rDate FROM buy
-  RIGHT JOIN customer ON buy.idbucu = customer.idcu
-	JOIN glasses ON buy.idbugl = glasses.idgl
-	JOIN brand ON glasses.idglbr = brand.idbr
-  WHERE customer.name = 'Manuel Perez' AND YEAR(buy.rDate) = '2022';
+RIGHT JOIN customer ON buy.idbucu = customer.idcu
+JOIN glasses ON buy.idbugl = glasses.idgl
+JOIN brand ON glasses.idglbr = brand.idbr
+WHERE customer.name = 'Manuel Perez' AND YEAR(buy.rDate) = '2022';
 
 SELECT buy.idbu, customer.name, brand.name, glasses.pricing, buy.rDate FROM buy
-  RIGHT JOIN customer ON buy.idbucu = customer.idcu
-	JOIN glasses ON buy.idbugl = glasses.idgl
-	JOIN brand ON glasses.idglbr = brand.idbr
-  WHERE customer.name = 'Sara Pizarro' AND YEAR(buy.rDate) = '2022';
+RIGHT JOIN customer ON buy.idbucu = customer.idcu
+JOIN glasses ON buy.idbugl = glasses.idgl
+JOIN brand ON glasses.idglbr = brand.idbr
+WHERE customer.name = 'Sara Pizarro' AND YEAR(buy.rDate) = '2022';
 
 /* Llista els diferents models d'ulleres que ha venut un empleat/da durant un any. */
 SELECT buy.idbugl, brand.name, glasses.mounting, glasses.mColor, employee.name FROM buy
-  JOIN glasses ON buy.idbugl = glasses.idgl
-	JOIN brand ON glasses.idglbr = brand.idbr
-	JOIN employee ON buy.idbuem = employee.idem
-	WHERE employee.name = 'Ana Santos' AND YEAR(buy.rDate) = '2022';
+JOIN glasses ON buy.idbugl = glasses.idgl
+JOIN brand ON glasses.idglbr = brand.idbr
+JOIN employee ON buy.idbuem = employee.idem
+WHERE employee.name = 'Ana Santos' AND YEAR(buy.rDate) = '2022';
 
 SELECT buy.idbugl, brand.name, glasses.mounting, glasses.mColor, employee.name FROM buy
-  JOIN glasses ON buy.idbugl = glasses.idgl
-	JOIN brand ON glasses.idglbr = brand.idbr
-	JOIN employee ON buy.idbuem = employee.idem
-	WHERE employee.name = 'Pedro Lara' AND YEAR(buy.rDate) = '2022';
+JOIN glasses ON buy.idbugl = glasses.idgl
+JOIN brand ON glasses.idglbr = brand.idbr
+JOIN employee ON buy.idbuem = employee.idem
+WHERE employee.name = 'Pedro Lara' AND YEAR(buy.rDate) = '2022';
 
 /* Llista els diferents proveïdors que han subministrat ulleres venudes amb èxit per l'òptica. */
 SELECT provider.name FROM provider
-	RIGHT JOIN brand ON provider.idpr = brand.idbrpr
-	RIGHT JOIN glasses ON brand.idbr = glasses.idglbr
-	RIGHT JOIN buy ON glasses.idgl = buy.idbugl
-	GROUP BY provider.name;
+RIGHT JOIN brand ON provider.idpr = brand.idbrpr
+RIGHT JOIN glasses ON brand.idbr = glasses.idglbr
+RIGHT JOIN buy ON glasses.idgl = buy.idbugl
+GROUP BY provider.name;
 
