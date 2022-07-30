@@ -45,7 +45,7 @@ CREATE TABLE glasses (
 	mColor   VARCHAR (25)  NOT NULL,
 	rColor   VARCHAR (25)  NOT NULL,
 	lcolor   VARCHAR (25)  NOT NULL,
-	pricing  FLOAT        NOT NULL,
+	pricing  FLOAT         NOT NULL,
 
 	CONSTRAINT idgl_idbr FOREIGN KEY (idglbr)
 	REFERENCES brand (idbr)
@@ -64,7 +64,7 @@ CREATE TABLE customer (
 	address VARCHAR (150) NOT NULL,
 	phone   VARCHAR (9)   NOT NULL,
 	email   VARCHAR (50)  NOT NULL,
-	rDate   DATE         NOT NULL,
+	rDate   DATE          NOT NULL,
 	referer INT UNSIGNED,
 
 	CONSTRAINT ref_idcu FOREIGN KEY (referer)
@@ -105,24 +105,24 @@ INSERT INTO brand VALUES(2, 1, 'SunBeauty');
 INSERT INTO brand VALUES(3, 2, 'EyeCorrect');
 INSERT INTO brand VALUES(4, 3, 'hEye');
 
-INSERT INTO glasses VALUES(1, 1, 1.0, 1.5, 'metallic', 'gold', 'Dark Shade', 'Dark Shade', 35.12);
-INSERT INTO glasses VALUES(2, 2, 0.5, 0.5, 'metallic', 'silver', 'Green', 'Green', 22.85);
-INSERT INTO glasses VALUES(3, 3, 2.0, 2.5, 'polymer', 'black', 'Black', 'Black', 38.99);
-INSERT INTO glasses VALUES(4, 4, 1.0, 1.0, 'polymer', 'red', 'transparent', 'transparent', 49.99);
+INSERT INTO glasses VALUES(1, 1, 1.0, 1.5, 'metallic', 'Gold', 'Dark Shade', 'Dark Shade', 35.12);
+INSERT INTO glasses VALUES(2, 2, 0.5, 0.5, 'metallic', 'Silver', 'Green', 'Green', 22.85);
+INSERT INTO glasses VALUES(3, 3, 2.0, 2.5, 'polymer', 'Black', 'Black', 'Black', 38.99);
+INSERT INTO glasses VALUES(4, 4, 1.0, 1.0, 'polymer', 'Red', 'Transparent', 'Transparent', 49.99);
 
 INSERT INTO employee VALUES(1, 'Pedro Lara');
 INSERT INTO employee VALUES(2, 'Ana Santos');
 
-INSERT INTO customer VALUES(1, 'Manuel Perez', 'C/ de los Manzanos', '666333222', 'mp@mp.com', '1980-3-03', NULL);
-INSERT INTO customer VALUES(2, 'Sara Pizarro', 'C/ de los Naranjos', '999444111', 'sp@prv.net', '1991-7-25', 1);
-INSERT INTO customer VALUES(3, 'Ana Gonzalez', 'C/ de los Nísperos', '996112111', 'ag@prv.net', '1971-8-10', 2);
-INSERT INTO customer VALUES(4, 'Sara Pizarro', 'C/ de los Perales', '966774332', 'sp@spv.net', '1951-7-22', NULL);
+INSERT INTO customer VALUES(1, 'Manuel Perez', 'C/ de los Manzanos', '666333222', 'mp@mp.com', '1980-03-03', NULL);
+INSERT INTO customer VALUES(2, 'Sara Pizarro', 'C/ de los Naranjos', '999444111', 'sp@prv.net', '1991-07-25', 1);
+INSERT INTO customer VALUES(3, 'Ana Gonzalez', 'C/ de los Nísperos', '996112111', 'ag@prv.net', '1971-08-10', 2);
+INSERT INTO customer VALUES(4, 'Sara Pizarro', 'C/ de los Perales', '966774332', 'sp@spv.net', '1951-07-22', NULL);
 
-INSERT INTO buy VALUES(1, 1, 1, 1, '2022-1-10');
-INSERT INTO buy VALUES(2, 1, 2, 2, '2022-6-05');
-INSERT INTO buy VALUES(3, 2, 3, 1, '2022-3-28');
-INSERT INTO buy VALUES(4, 3, 3, 2, '2021-4-10');
-INSERT INTO buy VALUES(5, 1, 1, 1, '2021-11-1');
+INSERT INTO buy VALUES(1, 1, 1, 1, '2022-01-10');
+INSERT INTO buy VALUES(2, 1, 2, 2, '2022-06-05');
+INSERT INTO buy VALUES(3, 2, 3, 1, '2022-03-28');
+INSERT INTO buy VALUES(4, 3, 3, 2, '2021-04-10');
+INSERT INTO buy VALUES(5, 1, 1, 1, '2021-11-01');
 
 /* Llista el total de factures d'un client/a en un període determinat. */
 SELECT buy.idbu, customer.name, brand.name, glasses.pricing, buy.rDate FROM buy
