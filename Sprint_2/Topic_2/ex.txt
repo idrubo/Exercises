@@ -1,3 +1,0 @@
-
-db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}})
-

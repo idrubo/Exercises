@@ -40,8 +40,7 @@ db.buy.updateOne ({'glasses.brand': 'null'},
 	{$set: { 'glasses.brand': {
 		idbra   : 1,
 		provider: 'null',
-		name    : 'SunJoy'
-	}}})
+		name    : 'SunJoy' }}})
 
 db.buy.updateOne ({'glasses.brand.provider': 'null'},
 	{$set: { 'glasses.brand.provider': {
@@ -56,13 +55,11 @@ db.buy.updateOne ({'glasses.brand.provider': 'null'},
 		country: 'UK',
 		phone  : '32555666',
 		fax    : '32555667',
-		NIF    : '11222222F'
-	}}})
+		NIF    : '11222222F' }}})
 
 db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
 	idemp: 1,
-	name : 'Pedro Lara'
-}}})
+	name : 'Pedro Lara' }}})
 
 /* Second buy */
 

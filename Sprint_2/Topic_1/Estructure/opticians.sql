@@ -100,15 +100,17 @@ INSERT INTO provider VALUES(1, 'Perfect Glasses', 'First St.', 100, 10, NULL, 'L
 INSERT INTO provider VALUES(2, 'Shiny Eye Works', 'Second Av.', 23, NULL, NULL, 'New York', '11555', 'US', '32555666', '32555667', '99222242R');
 INSERT INTO provider VALUES(3, 'Healthy Eye', 'Fifth Av.', 500, NULL, NULL, 'New York', '11555', 'US', '32999111', '32999112', '98444686Q');
 
-INSERT INTO brand VALUES(1, 1, 'SunJoy');
-INSERT INTO brand VALUES(2, 1, 'SunBeauty');
-INSERT INTO brand VALUES(3, 2, 'EyeCorrect');
-INSERT INTO brand VALUES(4, 3, 'hEye');
+--                      bra pro
+INSERT INTO brand VALUES(1,  1, 'SunJoy');
+INSERT INTO brand VALUES(2,  1, 'SunBeauty');
+INSERT INTO brand VALUES(3,  2, 'EyeCorrect');
+INSERT INTO brand VALUES(4,  3, 'hEye');
 
-INSERT INTO glasses VALUES(1, 1, 1.0, 1.5, 'metallic', 'Gold', 'Dark Shade', 'Dark Shade', 35.12);
-INSERT INTO glasses VALUES(2, 2, 0.5, 0.5, 'metallic', 'Silver', 'Green', 'Green', 22.85);
-INSERT INTO glasses VALUES(3, 3, 2.0, 2.5, 'polymer', 'Black', 'Black', 'Black', 38.99);
-INSERT INTO glasses VALUES(4, 4, 1.0, 1.0, 'polymer', 'Red', 'Transparent', 'Transparent', 49.99);
+--                        gla bra
+INSERT INTO glasses VALUES(1,  1, 1.0, 1.5, 'metallic', 'Gold', 'Dark Shade', 'Dark Shade', 35.12);
+INSERT INTO glasses VALUES(2,  2, 0.5, 0.5, 'metallic', 'Silver', 'Green', 'Green', 22.85);
+INSERT INTO glasses VALUES(3,  3, 2.0, 2.5, 'polymer', 'Black', 'Black', 'Black', 38.99);
+INSERT INTO glasses VALUES(4,  4, 1.0, 1.0, 'polymer', 'Red', 'Transparent', 'Transparent', 49.99);
 
 INSERT INTO employee VALUES(1, 'Pedro Lara');
 INSERT INTO employee VALUES(2, 'Ana Santos');
@@ -118,11 +120,12 @@ INSERT INTO customer VALUES(2, 'Sara Pizarro', 'C/ de los Naranjos', '999444111'
 INSERT INTO customer VALUES(3, 'Ana Gonzalez', 'C/ de los Nísperos', '996112111', 'ag@prv.net', '1971-08-10', 2);
 INSERT INTO customer VALUES(4, 'Sara Pizarro', 'C/ de los Perales', '966774332', 'sp@spv.net', '1951-07-22', NULL);
 
-INSERT INTO buy VALUES(1, 1, 1, 1, '2022-01-10');
-INSERT INTO buy VALUES(2, 1, 2, 2, '2022-06-05');
-INSERT INTO buy VALUES(3, 2, 3, 1, '2022-03-28');
-INSERT INTO buy VALUES(4, 3, 3, 2, '2021-04-10');
-INSERT INTO buy VALUES(5, 1, 1, 1, '2021-11-01');
+--                    buy cus gla emp
+INSERT INTO buy VALUES(1,  1,  1,  1, '2022-01-10');
+INSERT INTO buy VALUES(2,  1,  2,  2, '2022-06-05');
+INSERT INTO buy VALUES(3,  2,  3,  1, '2022-03-28');
+INSERT INTO buy VALUES(4,  3,  3,  2, '2021-04-10');
+INSERT INTO buy VALUES(5,  1,  1,  1, '2021-11-01');
 
 /* Llista el total de factures d'un client/a en un període determinat. */
 SELECT buy.idbu, customer.name, brand.name, glasses.pricing, buy.rDate FROM buy
