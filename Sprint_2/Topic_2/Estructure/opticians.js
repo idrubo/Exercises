@@ -10,11 +10,11 @@ db.buy.drop()
 
 /* First buy */
 
-db.buy.insertMany ([{
+db.buy.insertOne ({
 	customer:'null',
 	glasses :'null',
 	employee:'null',
-	rDate   :'2022-01-10' }])
+	rDate   :'2022-01-10' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 	idcus  : 1,
@@ -63,11 +63,11 @@ db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
 
 /* Second buy */
 
-db.buy.insertMany ([{
+db.buy.insertOne ({
 	customer:'null',
 	glasses :'null',
 	employee:'null',
-	rDate   :'2022-06-05' }])
+	rDate   :'2022-06-05' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 	idcus  : 1 }}})
@@ -99,11 +99,11 @@ db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
 
 /* Third buy */
 
-db.buy.insertMany ([{
+db.buy.insertOne ({
 	customer:'null',
 	glasses :'null',
 	employee:'null',
-	rDate   :'2022-03-28' }])
+	rDate   :'2022-03-28' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 	idcus  : 2,
@@ -151,11 +151,11 @@ db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
 
 /* Fourth buy */
 
-db.buy.insertMany ([{
+db.buy.insertOne ({
 	customer:'null',
 	glasses :'null',
 	employee:'null',
-	rDate   :'2021-04-10' }])
+	rDate   :'2021-04-10' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 	idcus  : 3,
@@ -195,11 +195,11 @@ db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
 
 /* Fifth buy */
 
-db.buy.insertMany ([{
+db.buy.insertOne ({
 	customer:'null',
 	glasses :'null',
 	employee:'null',
-	rDate   :'2021-11-01' }])
+	rDate   :'2021-11-01' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 	idcus  : 1, }}})
