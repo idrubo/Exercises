@@ -249,9 +249,9 @@ INSERT INTO orderD VALUES (1,    1,     1,  2);
 --                          pur purcus puremp purres          purDT              delDT             deliver   total
 INSERT INTO purchase VALUES (2,   2,     4,     2,   '2022-03-10 09:10:00', '2022-03-10 09:23:00', 'atHome', 12.30);
 --                        ord ordpur orddri n
-INSERT INTO orderD VALUES (2,    2,     3, 2);
+INSERT INTO orderD VALUES (2,    2,     3,  2);
 --                        orp orppur orppiz n
-INSERT INTO orderP VALUES (1,    2,     1, 2);
+INSERT INTO orderP VALUES (1,    2,     1,  2);
 
 --                          pur purcus puremp purres          purDT              delDT             deliver   total
 INSERT INTO purchase VALUES (3,    3,   NULL,   1,   '2022-03-10 09:10:00',      NULL,             'onRest', 25.30);

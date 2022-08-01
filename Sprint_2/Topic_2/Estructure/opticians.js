@@ -6,7 +6,7 @@
 
 db = connect('mongodb://localhost/opticians' );
 
-db.buy.drop()
+db.buy.drop ()
 
 /* First buy */
 
@@ -28,13 +28,13 @@ db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 db.buy.updateOne ({glasses: 'null'}, {$set: { glasses: {
 	idgla   : 1,
 	brand   : 'null',
-	lPower  : '1.0',
-	rPower  : '1.5',
+	lPower  : 1.0,
+	rPower  : 1.5,
 	mounting: 'metallic',
 	mColor  : 'gold',
 	rColor  : 'Dark Shade',
 	lcolor  : 'Dark Shade',
-	pricing : '35.12' }}})
+	pricing : 35.12 }}})
 
 db.buy.updateOne ({'glasses.brand': 'null'},
 	{$set: { 'glasses.brand': {
@@ -47,8 +47,8 @@ db.buy.updateOne ({'glasses.brand.provider': 'null'},
 		idpro  : 1,
 		name   : 'Perfect Glasses',
 		street : 'First St.',
-		nbr    : '100',
-		flr    : '10',
+		nbr    : 100,
+		flr    : 10,
 		door   : 'NULL',
 		city   : 'London',
 		zipCode: '01231',
@@ -75,13 +75,13 @@ db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 db.buy.updateOne ({glasses: 'null'}, {$set: { glasses: {
 	idgla   : 2,
 	brand   : 'null',
-	lPower  : '0.5',
-	rPower  : '0.5',
+	lPower  : 0.5,
+	rPower  : 0.5,
 	mounting: 'metallic',
 	mColor  : 'Silver',
 	rColor  : 'Green',
 	lcolor  : 'Green',
-	pricing : '22.85' }}})
+	pricing : 22.85 }}})
 
 db.buy.updateOne ({'glasses.brand': 'null'},
 	{$set: { 'glasses.brand': {
@@ -117,13 +117,13 @@ db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 db.buy.updateOne ({glasses: 'null'}, {$set: { glasses: {
 	idgla   : 3,
 	brand   : 'null',
-	lPower  : '2.0',
-	rPower  : '2.5',
+	lPower  : 2.0,
+	rPower  : 2.5,
 	mounting: 'polymer',
 	mColor  : 'Black',
 	rColor  : 'Black',
 	lcolor  : 'Black',
-	pricing : '38.99' }}})
+	pricing : 38.99 }}})
 
 db.buy.updateOne ({'glasses.brand': 'null'},
 	{$set: { 'glasses.brand': {
@@ -136,7 +136,7 @@ db.buy.updateOne ({'glasses.brand.provider': 'null'},
 		idpro  : 2,
 		name   : 'Shiny Eye Works',
 		street : 'Second Av.',
-		nbr    : '23',
+		nbr    : 23,
 		flr    : 'NULL',
 		door   : 'NULL',
 		city   : 'New York',
@@ -180,7 +180,7 @@ db.buy.updateOne ({'glasses.brand.provider': 'null'},
 		idpro  : 3,
 		name   : 'Healthy Eye',
 		street : 'Fifth Av.',
-		nbr    : '500',
+		nbr    : 500,
 		flr    : 'NULL',
 		door   : 'NULL',
 		city   : 'New York',
