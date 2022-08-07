@@ -262,18 +262,18 @@ INSERT INTO orderD VALUES (3,   3,     1,   1);
 --                        orp orppur orppiz n
 INSERT INTO orderP VALUES (2,   3,     2,   1);
 --                        ord ordpur orddri n
-INSERT INTO orderD VALUES (4,   3,     1,   1);
+INSERT INTO orderD VALUES (4,   3,     2,   1);
 --                        orp orppur orppiz n
 INSERT INTO orderP VALUES (3,   3,     3,   1);
 
 --                          pur purcus puremp purres          purDT              delDT             deliver   total
-INSERT INTO purchase VALUES (4,    4,   NULL,   2,   '2022-03-10 09:10:00',      NULL,             'onRest', 10.20);
+INSERT INTO purchase VALUES (4,    4,   NULL,   2,   '2022-03-10 09:20:00',      NULL,             'onRest', 10.20);
 --                        orh orhpur orhham n
 INSERT INTO orderH VALUES (3,    4,     1,  2);
 --                        ord ordpur orddri n
 INSERT INTO orderD VALUES (5,    4,     3, 1);
 --                        ord ordpur orddri n
-INSERT INTO orderD VALUES (6,    4,     3, 1);
+INSERT INTO orderD VALUES (6,    4,     2, 1);
 
 --                          pur purcus puremp purres         purDT                delDT             deliver   total
 INSERT INTO purchase VALUES (5,    1,    4,     2,   '2022-04-11 10:10:00', '2022-04-11 10:15:00', 'atHome',  30.75);
