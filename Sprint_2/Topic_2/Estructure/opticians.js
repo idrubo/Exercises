@@ -70,7 +70,13 @@ db.buy.insertOne ({
 	rDate   :'2022-06-05' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
-	idcus  : 1 }}})
+	idcus  : 1,
+	name   : 'Manuel Perez',
+	address: 'C/ de los Manzanos',
+	phone  : '666333222',
+	email  : 'mp@mp.com',
+	rDate  : '1980-03-03',
+	referer: 'null' }}})
 
 db.buy.updateOne ({glasses: 'null'}, {$set: { glasses: {
 	idgla   : 2,
@@ -91,7 +97,18 @@ db.buy.updateOne ({'glasses.brand': 'null'},
 
 db.buy.updateOne ({'glasses.brand.provider': 'null'},
 	{$set: { 'glasses.brand.provider': {
-		idpro: 1 }}})
+		idpro  : 1,
+		name   : 'Perfect Glasses',
+		street : 'First St.',
+		nbr    : 100,
+		flr    : 10,
+		door   : 'NULL',
+		city   : 'London',
+		zipCode: '01231',
+		country: 'UK',
+		phone  : '32555666',
+		fax    : '32555667',
+		NIF    : '11222222F' }}})
 
 db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
 	idemp: 2,
@@ -147,7 +164,8 @@ db.buy.updateOne ({'glasses.brand.provider': 'null'},
 		NIF    : '99222242R' }}})
 
 db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
-	idemp: 1 }}})
+	idemp: 1,
+	name : 'Pedro Lara' }}})
 
 /* Fourth buy */
 
@@ -167,13 +185,21 @@ db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
 	referer: 2 }}})
 
 db.buy.updateOne ({glasses: 'null'}, {$set: { glasses: {
-	idgla: 3,
-	brand: 'null' }}})
+	idgla   : 3,
+	brand   : 'null',
+	lPower  : 2.0,
+	rPower  : 2.5,
+	mounting: 'polymer',
+	mColor  : 'Black',
+	rColor  : 'Black',
+	lcolor  : 'Black',
+	pricing : 38.99 }}})
 
 db.buy.updateOne ({'glasses.brand': 'null'},
 	{$set: { 'glasses.brand': {
 		idbra   : 3,
-	  provider: 'null' }}})
+		provider: 'null',
+		name    : 'EyeCorrect' }}})
 
 db.buy.updateOne ({'glasses.brand.provider': 'null'},
 	{$set: { 'glasses.brand.provider': {
@@ -191,7 +217,8 @@ db.buy.updateOne ({'glasses.brand.provider': 'null'},
 		NIF    : '98444686Q' }}})
 
 db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
-	idemp: 2 }}})
+	idemp: 2,
+	name : 'Ana Santos' }}})
 
 /* Fifth buy */
 
@@ -202,21 +229,47 @@ db.buy.insertOne ({
 	rDate   :'2021-11-01' })
 
 db.buy.updateOne ({customer: 'null'}, {$set: { customer: {
-	idcus  : 1, }}})
+	idcus  : 1,
+	name   : 'Manuel Perez',
+	address: 'C/ de los Manzanos',
+	phone  : '666333222',
+	email  : 'mp@mp.com',
+	rDate  : '1980-03-03',
+	referer: 'null' }}})
 
 db.buy.updateOne ({glasses: 'null'}, {$set: { glasses: {
-	idgla: 1,
-	brand: 'null' }}})
+	idgla   : 1,
+	brand   : 'null',
+	lPower  : 1.0,
+	rPower  : 1.5,
+	mounting: 'metallic',
+	mColor  : 'gold',
+	rColor  : 'Dark Shade',
+	lcolor  : 'Dark Shade',
+	pricing : 35.12 }}})
 
 db.buy.updateOne ({'glasses.brand': 'null'},
 	{$set: { 'glasses.brand': {
 		idbra   : 1,
-	  provider: 'null' }}})
+		provider: 'null',
+		name    : 'SunJoy' }}})
 
 db.buy.updateOne ({'glasses.brand.provider': 'null'},
 	{$set: { 'glasses.brand.provider': {
-		idpro  : 1 }}})
+		idpro  : 1,
+		name   : 'Perfect Glasses',
+		street : 'First St.',
+		nbr    : 100,
+		flr    : 10,
+		door   : 'NULL',
+		city   : 'London',
+		zipCode: '01231',
+		country: 'UK',
+		phone  : '32555666',
+		fax    : '32555667',
+		NIF    : '11222222F' }}})
 
 db.buy.updateOne ({employee: 'null'}, {$set: { employee: {
-	idemp: 1 }}})
+	idemp: 1,
+	name : 'Pedro Lara' }}})
 
