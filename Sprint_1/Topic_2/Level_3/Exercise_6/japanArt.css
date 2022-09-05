@@ -1,0 +1,201 @@
+article {
+	margin: 10px;
+	font-size: 14px;
+
+	display: flex;
+	flex-direction: row;
+}
+
+#aMainBox {
+	background-color: LightGray;
+
+	flex-grow: 1 0 50%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+@keyframes keyASect {
+  from {opacity: 0.0;}
+  to   {opacity: 1.0;}
+}
+
+.aSection {
+	margin: 10px;
+	background-color: WhiteSmoke;
+
+	flex: 1 0 35%;
+
+	display: flex;
+	flex-direction: column;
+
+	opacity: 0.0;
+	animation: keyASect 4s 2s forwards;
+}
+
+.aTop {
+	position: relative;
+}
+
+img.aPict {
+	width: 100%;
+}
+
+.aPictText {
+	color: Gold;
+	position: absolute;
+	left:  5%;
+	top: 90%;
+}
+
+.aMiddle {
+	background-color: Salmon;
+	height: 50px;
+	letter-spacing: 5px;
+}
+
+p.aMText {
+	font-size: 18px;
+	padding: 5px;
+	margin: 0px;
+	color: White;
+}
+
+.aTCols {
+	display: flex;
+	flex-direction: row;
+}
+
+.aTColumn {
+	padding: 4px;
+	min-width: 100px;
+
+	flex-basis: 45%;
+}
+
+#aBottom {
+	display:flex;
+	align-items: center;
+	flex-basis: 10%;
+}
+
+a.aLink {
+	padding: 5px 0px 5px 2px;
+	color: gray;
+	padding = 100px;
+	border-radius: 25%;
+
+	transition-property: background-color;
+	transition-duration: 1s;
+}
+
+a.aLink:visited { text-decoration: none; }
+a.aLink:link    { text-decoration: none; }
+
+.aLink:hover { background-color: DarkSalmon; }
+
+@keyframes keyAFoot {
+  from {opacity: 0.0;}
+  to   {opacity: 1.0;}
+}
+
+#aFooter {
+	margin: 10px;
+	padding: 4px;
+	background-color: WhiteSmoke;
+
+	flex-basis: 85%;
+	flex-grow: 1;
+
+	display: flex;
+	justify-content: center;
+
+	opacity: 0.0;
+	animation: keyASect 4s 2s forwards;
+}
+
+@keyframes keyAside {
+  from {bottom: -1500px;}
+  to   {bottom:    0px;}
+}
+
+aside {
+	margin: 0px 0px 10px 0px;
+
+	flex: 1 0 25%;
+
+	position: relative;
+	animation: keyAside 1s 2s backwards;
+}
+
+.aSide {
+	margin: 0px 0px 0px 10px;
+	padding: 4px;
+	background-color: LightGray;
+	height: 100%;
+}
+
+@keyframes keyFoot {
+  from {left: -1300px;}
+  to   {left:     0px;}
+}
+
+footer {
+	margin: 10px;
+
+	font-size: 15px;
+	background-color: LightGray;
+
+	display: flex;
+
+	position: relative;
+	animation: keyFoot 1s 3s backwards;
+}
+
+#fText {
+	margin: 10px 0px 10px 0px;
+	text-align: center;
+
+	background-color: WhiteSmoke;
+
+	flex-grow: 1;
+}
+
+@media only screen and (max-width: 768px) {
+	article {
+		flex-direction: column;
+	}
+
+	aside {
+		margin: 10px 0px 0px 0px;
+	}
+
+	.aSide {
+		margin: 0px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#Icon {
+		justify-content: center;
+	}
+
+	#Menu {
+		justify-content: center;
+	}
+
+	#Social {
+		justify-content: center;
+	}
+
+	#aMainBox {
+		flex-direction: column;
+	}
+}
+

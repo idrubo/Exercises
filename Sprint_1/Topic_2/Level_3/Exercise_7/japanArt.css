@@ -1,0 +1,188 @@
+article {
+	margin: 10px;
+	font-size: 14px;
+
+	display: grid;
+	grid-template-columns: 80% 20%;
+}
+
+#aMainBox {
+	background-color: LightGray;
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+@keyframes keyASect {
+	from {opacity: 0.0;}
+	to   {opacity: 1.0;}
+}
+
+.aSection {
+	margin: 10px;
+	background-color: WhiteSmoke;
+
+	opacity: 0.0;
+	animation: keyASect 4s 2s forwards;
+}
+
+.aTop {
+	position: relative;
+}
+
+img.aPict {
+	width: 100%;
+}
+
+.aPictText {
+	color: Gold;
+	position: absolute;
+	left:  5%;
+	top:  90%;
+}
+
+.aMiddle {
+	background-color: Salmon;
+	letter-spacing: 5px;
+}
+
+p.aMText {
+	font-size: 18px;
+	padding: 15px;
+	color: White;
+}
+
+.aTCols {
+	display: grid;
+	grid-template-columns: 45% 45%;
+}
+
+.aTColumn {
+	padding: 4px;
+	min-width: 100px;
+}
+
+#aBottom {
+	margin: 5px
+}
+
+a.aLink {
+	padding: 5px 0px 5px 2px;
+	color: gray;
+	border-radius: 25%;
+
+	transition-property: background-color;
+	transition-duration: 1s;
+}
+
+a.aLink:visited { text-decoration: none; }
+a.aLink:link    { text-decoration: none; }
+
+.aLink:hover { background-color: DarkSalmon; }
+
+@keyframes keyAFoot {
+	from {opacity: 0.0;}
+	to   {opacity: 1.0;}
+}
+
+#aFooter {
+	margin: 10px;
+	padding: 4px;
+	background-color: WhiteSmoke;
+
+	grid-column: 1 / span 2;
+
+	opacity: 0.0;
+	animation: keyASect 4s 2s forwards;
+}
+
+@keyframes keyAside {
+	from {bottom: -1500px;}
+	to   {bottom:    0px;}
+}
+
+aside {
+	margin: 0px 0px 10px 0px;
+
+	position: relative;
+	animation: keyAside 1s 2s backwards;
+}
+
+.aSide {
+	margin: 0px 0px 0px 10px;
+	padding: 4px;
+	background-color: LightGray;
+	height: 100%;
+}
+
+.fCont {
+	margin: 10px;
+	padding: 5px 0px 5px 0px;
+
+	font-size: 15px;
+	background-color: LightGray;
+}
+
+@keyframes keyFoot {
+	from {left: -1300px;}
+	to   {left:     0px;}
+}
+
+footer {
+	position: relative;
+	animation: keyFoot 1s 3s backwards;
+}
+
+#fText {
+	margin: 10px 0px 10px 0px;
+	text-align: center;
+
+	background-color: WhiteSmoke;
+}
+
+@media only screen and (max-width: 768px) {
+
+	article {
+		grid-template-columns: 100%;
+	}
+
+	aside {
+		margin: 10px 0px 10px 0px;
+	}
+
+	.aSide {
+		margin: 0px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+	nav {
+		grid-template-columns: 100%;
+		grid-template-rows: 30% 40% 30%;
+		justify-content: center;
+	}
+
+	#Icon {
+		text-align: center;
+	}
+
+	#Menu {
+		justify-content: space-between;
+	}
+
+	#Social {
+		text-align: center;
+		justify-content: center;
+	}
+
+	#aMainBox {
+		grid-template-columns: 100%;
+	}
+
+	#aFooter {
+		grid-column: 1 / span 1;
+	}
+
+}
+
