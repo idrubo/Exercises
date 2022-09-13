@@ -16,7 +16,7 @@ CREATE TABLE user (
 	country VARCHAR  (50) NOT NULL,
 	zipCode VARCHAR  (10) NOT NULL,
 	dBirth  DATE          NOT NULL,
-	sex     ENUM ('male', 'female') NOT NULL
+	gender     ENUM ('male', 'female') NOT NULL
 );
 
 CREATE TABLE video (
@@ -194,7 +194,7 @@ CREATE TABLE feelC (
 	PRIMARY KEY (idfecuse, idfeccom)
 );
 
---	                   iduse email            passwd name      country   zipCode  dBirth        sex
+--	                   iduse email            passwd name      country   zipCode  dBirth        gender
 INSERT INTO user VALUES (1,  'usr1@srv.com', 'xxx',  'John',   'US',     '02333', '1990-01-01', 'male');
 INSERT INTO user VALUES (2,  'usr2@srv.com', 'xxx',  'Mary',   'Canada', 'x1333', '1980-07-07', 'female');
 INSERT INTO user VALUES (3,  'usr3@srv.com', 'xxx',  'Robert', 'US',     '80555', '1991-02-02', 'male');

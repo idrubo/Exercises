@@ -16,7 +16,7 @@ CREATE TABLE user (
 	country  VARCHAR   (50) NOT NULL,
 	zipCode  VARCHAR   (10) NOT NULL,
 	dBirth   DATE           NOT NULL,
-	sex      ENUM ('male', 'female') NOT NULL
+	gender      ENUM ('male', 'female') NOT NULL
 );
 
 CREATE TABLE subscript (
@@ -35,7 +35,7 @@ CREATE TABLE subscript (
 
 CREATE TABLE cc (
 	idcc     INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	idccsub  INT UNSIGNED   NOT NULL,
+	idccsub  INT UNSIGNED   NULL,
 	ccN      VARCHAR   (19) NOT NULL,
 	month    INT UNSIGNED   NOT NULL,
 	year     INT UNSIGNED   NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE cc (
 
 CREATE TABLE paypal (
 	idpp     INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	idppsub  INT UNSIGNED   NOT NULL,
+	idppsub  INT UNSIGNED   NULL,
 	ppUser   VARCHAR   (16) NOT NULL,
 
 	CONSTRAINT idpp_idppsub FOREIGN KEY (idppsub)
@@ -125,7 +125,7 @@ CREATE TABLE album (
 CREATE TABLE song (
 	idson    INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	idsonpla INT UNSIGNED   NULL,
-	idsonalb INT UNSIGNED   NULL,
+	idsonalb INT UNSIGNED   NOT NULL,
 	n        INT UNSIGNED   NULL,
 	title    VARCHAR  (100) NOT NULL,
 	tLength  TIME           NOT NULL,
@@ -142,8 +142,8 @@ CREATE TABLE song (
 );
 
 CREATE TABLE collect (
-	idcolsha INT UNSIGNED   NOT NULL,
-	idcolson INT UNSIGNED   NOT NULL,
+	idcolsha INT UNSIGNED   NULL,
+	idcolson INT UNSIGNED   NULL,
 	idcoluse INT UNSIGNED   NOT NULL,
 	dCollect DATE           NOT NULL,
 
@@ -235,7 +235,7 @@ CREATE TABLE fSong (
 	CONSTRAINT idfsosonUniq UNIQUE (idfsoson, idfsouse)
 );
 
---                     iduse email           passwd  name      country   zipCode  dBirth        sex
+--                     iduse email           passwd  name      country   zipCode  dBirth        gender
 INSERT INTO user VALUES (1,  'usr1@srv.com', 'xxx',  'John',   'US',     '02333', '1990-01-01', 'male');
 INSERT INTO user VALUES (2,  'usr2@srv.com', 'xxx',  'Mary',   'Canada', 'x1333', '1980-07-07', 'female');
 INSERT INTO user VALUES (3,  'usr3@srv.com', 'xxx',  'Robert', 'US',     '80555', '1991-02-02', 'male');
