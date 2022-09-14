@@ -2,6 +2,10 @@
  * Sprint 2 Topic 2 (Estructure) Level 1 Exercise 2
  *
  * Pizzeria restaurant.
+ *
+ * Working plan:
+ *
+ *
  */
 
 db = connect('mongodb://localhost/pizzeria' );
