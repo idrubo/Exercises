@@ -13,8 +13,14 @@
 $routes = array(
 	'/' => 'test#index');
 
+# $rIndex = array (
+#	'/draft/'     => 'draft#index',
+#	'/draft/index.php'     => 'draft#index'
+# );
+
 $rIndex = array (
-	'/draft/'     => 'draft#index');
+	'/draft/'     => 'draft#index'
+);
 
 $rTask = array(
 	'/draft/task/' => 'draft#task');

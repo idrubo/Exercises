@@ -12,6 +12,9 @@ define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
 define('CMS_PATH', ROOT_PATH . '/lib/base/');
 
 /* For debugging: */ require ROOT_PATH . '/lib/debug/toConsole.php';
+
+/* DEBUG */ msgToConsole ('Into index.php');
+
 /* DEBUG */ varToConsole ('WEB_ROOT', WEB_ROOT);
 /* DEBUG */ varToConsole ('ROOT_PATH', ROOT_PATH);
 /* DEBUG */ varToConsole ('CMS_PATH', CMS_PATH);

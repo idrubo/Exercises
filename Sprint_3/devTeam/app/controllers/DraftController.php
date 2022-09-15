@@ -19,7 +19,7 @@ class DraftController extends ApplicationController
 	 * 1.- Define a Model.                           --> OK
 	 * 2.- Get an instance of our model.             --> OK
 	 * 3.- Pass the data, as an array, to the model. -->
-	 * 4.- Call a Model method for every             -->
+	 * 4.- Call a Model method for every operation.  -->
 	 *
 	 * 3.1.- Create an array with two elements: "worker" and "task".
 	 * Worker contains 
@@ -39,7 +39,6 @@ class DraftController extends ApplicationController
 
 		/* DEBUG */ varToConsole ('post', $post);
 		/* DEBUG */ varToConsole ('gettype (post)', gettype ($post));
-
 		/* DEBUG */ msgToConsole ('Leaving: DraftController::indexAction');
 	}
 
