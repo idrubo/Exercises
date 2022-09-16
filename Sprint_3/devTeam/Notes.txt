@@ -1,8 +1,0 @@
-
-Required branches:
--------------------
-
-1.- Main - Producción
-2.- Dev - Merges
-3.- Features.
-
