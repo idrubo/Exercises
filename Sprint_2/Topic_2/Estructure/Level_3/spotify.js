@@ -9,7 +9,7 @@ db = connect('mongodb://localhost/spotify' );
 
 // db = connect('mongodb://localhost/pizzeria', 'ita', 'ita');
 
-db.auth ('ita', 'ita');
+// db.auth ('ita', 'ita');
 
 db.user.drop ();
 db.subscript.drop ();

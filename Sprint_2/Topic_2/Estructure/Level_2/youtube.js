@@ -10,7 +10,7 @@
  */
 
 db = connect('mongodb://localhost/youtube' );
-db.auth ('ita', 'ita');
+// db.auth ('ita', 'ita');
 
 db.user.drop ();
 db.video.drop ();
