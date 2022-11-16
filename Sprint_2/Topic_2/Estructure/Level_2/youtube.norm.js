@@ -3,6 +3,10 @@
  *
  * Youtube
  *
+ * Notes:
+ *
+ * Complete and check the database !!!!
+ *
  */
 
 db = connect('mongodb://localhost/youtube' );
@@ -16,6 +20,7 @@ db.chHold.drop ();
 db.subscribe.drop ();
 db.playlist.drop ();
 db.pHold.drop ();
+db.feelv.drop ();
 db.comment.drop ();
 db.writec.drop ();
 db.feelc.drop ();
@@ -104,25 +109,8 @@ db.video.insertOne ({
   thumb    : 'swt.jpg',
   dPublish : '2020-01-01',
   nViews   : 100,
-  state    : 'public',
-  feelV    : 'null1'
+  state    : 'public'
 });
-
-db.video.updateMany ({feelV: 'null1'},
-  {$set: { feelV: [
-    {
-      idfevuse : oidUse1,
-      dFeel    : '2020-01-01',
-      feel     : 'like'
-    }, {
-      idfevuse : oidUse4,
-      dFeel    : '2020-05-03',
-      feel     : 'like'
-    }, {
-      idfevuse : oidUse5,
-      dFeel : '2020-02-06',
-      feel  : 'like'
-    }]}});
 
 oidVid2 = ObjectId ();
 db.video.insertOne ({
@@ -136,21 +124,8 @@ db.video.insertOne ({
   thumb    : 'sci.jpg',
   dPublish : '2019-02-02',
   nViews   : 101,
-  state    : 'hidden',
-  feelV    : 'null2'
+  state    : 'hidden'
 });
-
-db.video.updateMany ({feelV: 'null2'},
-  {$set: { feelV: [
-    {
-      idfevuse : oidUse3,
-      dFeel : '2020-02-02',
-      feel  : 'dislike'
-    }, {
-      idfevuse : oidUse4,
-      dFeel    : '2020-05-03',
-      feel     : 'like'
-    }]}});
 
 oidVid3 = ObjectId ();
 db.video.insertOne ({
@@ -164,17 +139,8 @@ db.video.insertOne ({
   thumb    : 'nat.jpg',
   dPublish : '2021-03-03',
   nViews   : 102,
-  state    : 'private',
-  feelV    : 'null3'
+  state    : 'private'
 });
-
-db.video.updateMany ({feelV: 'null3'},
-  {$set: { feelV: [
-    {
-      idfevuse : oidUse4,
-      dFeel    : '2020-02-04',
-      feel     : 'like'
-    }]}});
 
 oidVid4 = ObjectId ();
 db.video.insertOne ({
@@ -188,17 +154,8 @@ db.video.insertOne ({
   thumb    : 'dan.jpg',
   dPublish : '2018-05-15',
   nViews   : 103,
-  state    : 'public',
-  feelV    : 'null4'
+  state    : 'public'
 });
-
-db.video.updateMany ({feelV: 'null4'},
-  {$set: { feelV: [
-    {
-      idfevuse : oidUse2,
-      dFeel    : '2020-02-01',
-      feel     : 'like'
-    }]}});
 
 oidVid5 = ObjectId ();
 db.video.insertOne ({
@@ -212,17 +169,8 @@ db.video.insertOne ({
   thumb    : 'sol.jpg',
   dPublish : '2022-07-07',
   nViews   : 104,
-  state    : 'hidden',
-  feelV    : 'null5'
+  state    : 'hidden'
 });
-
-db.video.updateMany ({feelV: 'null5'},
-  {$set: { feelV: [
-    {
-      idfevuse : oidUse1,
-      dFeel    : '2020-01-01',
-      feel     : 'like'
-    }]}});
 
 oidVid6 = ObjectId ();
 db.video.insertOne ({
@@ -236,17 +184,8 @@ db.video.insertOne ({
   thumb    : 'spc.jpg',
   dPublish : '2020-02-03',
   nViews   : 104,
-  state    : 'private',
-  feelV    : 'null6'
+  state    : 'private'
 });
-
-db.video.updateMany ({feelV: 'null6'},
-  {$set: { feelV: [
-    {
-      idfevuse : oidUse5,
-      dFeel : '2020-02-05',
-      feel  : 'dislike'
-    }]}});
 
 // Labels
 
@@ -519,6 +458,71 @@ db.pHold.insertOne ({
 db.pHold.insertOne ({
   idholpla: oidPla5,
   idholvid: oidVid4
+});
+
+// FeelV
+
+db.feelv.insertOne ({
+  idfevuse : oidUse1,
+  idfevvid : oidVid1,
+  dFeel    : '2020-01-01',
+  feel     : 'like'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse1,
+  idfevvid : oidVid5,
+  dFeel    : '2020-01-01',
+  feel     : 'like'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse2,
+  idfevvid : oidVid4,
+  dFeel    : '2020-02-01',
+  feel     : 'like'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse3,
+  idfevvid : oidVid2,
+  dFeel : '2020-02-02',
+  feel  : 'dislike'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse4,
+  idfevvid : oidVid1,
+  dFeel    : '2020-05-03',
+  feel     : 'like'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse4,
+  idfevvid : oidVid2,
+  dFeel    : '2020-05-03',
+  feel     : 'like'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse4,
+  idfevvid : oidVid3,
+  dFeel    : '2020-02-04',
+  feel     : 'like'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse5,
+  idfevvid : oidVid6,
+  dFeel : '2020-02-05',
+  feel  : 'dislike'
+});
+
+db.feelv.insertOne ({
+  idfevuse : oidUse5,
+  idfevvid : oidVid1,
+  dFeel : '2020-02-06',
+  feel  : 'like'
 });
 
 // Comment
