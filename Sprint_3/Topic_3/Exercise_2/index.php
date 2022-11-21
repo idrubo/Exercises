@@ -1,6 +1,6 @@
 <?php
 
-require 'poultry.php';
+require_once 'poultry.php';
 require 'turkeyAdapter.php';
 
 function duck_interaction($duck)

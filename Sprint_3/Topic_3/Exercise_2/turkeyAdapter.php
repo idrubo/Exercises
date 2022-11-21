@@ -1,6 +1,8 @@
 <?php
 
-class turkeyAdapter
+require_once 'poultry.php';
+
+class turkeyAdapter implements asDuck
 {
   private $trk;
 

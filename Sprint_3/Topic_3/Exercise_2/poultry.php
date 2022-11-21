@@ -1,7 +1,13 @@
 <?php
 
-class Duck {
+interface asDuck
+{
+    public function quack ();
+    public function fly ();
+}
 
+class Duck implements asDuck
+{
 	public function quack ()
  	{
 		echo "Quack \n";
@@ -13,8 +19,8 @@ class Duck {
 	}
 }
 
-class Turkey {
-
+class Turkey
+{
 	public function gobble ()
  	{
 		echo "Gobble gobble \n";
