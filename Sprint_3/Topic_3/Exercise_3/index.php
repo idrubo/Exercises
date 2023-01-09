@@ -1,5 +1,8 @@
 <?php
 
+
+/* Sprint 3 - Topic 3 - Exercise 3 */
+
 require 'carCouponGen.php';
 
 $season = true;
